@@ -180,7 +180,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -257,6 +256,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bookstore.Data\Bookstore.Data.csproj">
+      <Project>{826cc665-b68d-4e14-b47c-7fba35318e33}</Project>
+      <Name>Bookstore.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bookstore.Models\Bookstore.Models.csproj">
+      <Project>{f2aea227-c475-4495-a8f8-7d95a6fc0fbc}</Project>
+      <Name>Bookstore.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bookstore.Services\Bookstore.Services.csproj">
+      <Project>{021a4832-c412-4ae2-bb0b-2ed02e605991}</Project>
+      <Name>Bookstore.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
