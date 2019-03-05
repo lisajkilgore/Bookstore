@@ -8,12 +8,12 @@ using System.Web.Mvc;
 namespace Bookstore.WebMVC.Controllers
 {
     [Authorize]
-    public class BookController : Controller
+    public class CartController : Controller
     {
-        // GET: Book
+        // GET: Cart
         public ActionResult Index()
         {
-            var model = new AdminBookListItem[0];
+            var model = new UserBookListItem[0];
             return View(model);
         }
     }
