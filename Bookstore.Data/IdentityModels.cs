@@ -31,6 +31,7 @@ namespace Bookstore.Data
             return new ApplicationDbContext();
         }
         public DbSet<Book> Book {get; set;}
+        public DbSet<Cart> Cart { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
