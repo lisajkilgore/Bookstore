@@ -16,7 +16,7 @@ namespace Bookstore.Data
         public int BookId { get; set; }
 
         [Required]
-        public int OwnerId { get; set; }
+        public Guid OwnerId { get; set; }
 
         [Required]
         public int Quantity { get; set; }

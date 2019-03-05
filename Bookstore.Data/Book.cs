@@ -15,7 +15,7 @@ namespace Bookstore.Data
         public int BookId { get; set; }
 
         [Required]
-        public int OwnerId { get; set; }
+        public Guid OwnerId { get; set; }
 
         [DefaultValue(true)]
         public bool IsFiction { get; set; }
