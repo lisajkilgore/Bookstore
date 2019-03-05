@@ -30,7 +30,7 @@ namespace Bookstore.Data
         {
             return new ApplicationDbContext();
         }
-        public DbSet<Bookstore> Bookstore {get; set;}
+        public DbSet<Book> Book {get; set;}
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
