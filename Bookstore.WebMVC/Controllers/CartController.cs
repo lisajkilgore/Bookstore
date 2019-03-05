@@ -16,5 +16,10 @@ namespace Bookstore.WebMVC.Controllers
             var model = new UserBookListItem[0];
             return View(model);
         }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
     }
 }
