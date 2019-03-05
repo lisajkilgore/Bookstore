@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bookstore.Data;
+using Bookstore.Models;
 
 namespace Bookstore.Models
 {
-    public enum BookType { Art_Photography, Biographies_Memoirs, Business, Children_s, Cookbook, History, Mystery_Suspense, Political, Religion_Spiritual, Romance, Self_Help, SciFi_Fantasy, Sports_Outdoors, Teen_YoungAdult, Travel }
 
     public class AdminBookListItem
     {

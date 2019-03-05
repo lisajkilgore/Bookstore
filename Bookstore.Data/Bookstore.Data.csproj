@@ -69,12 +69,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bookstore.Models\Bookstore.Models.csproj">
-      <Project>{F2AEA227-C475-4495-A8F8-7D95A6FC0FBC}</Project>
-      <Name>Bookstore.Models</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Migrations\201903050419504_initial migration.resx">
       <DependentUpon>201903050419504_initial migration.cs</DependentUpon>
     </EmbeddedResource>

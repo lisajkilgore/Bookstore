@@ -54,12 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BookService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bookstore.Data\Bookstore.Data.csproj">
+      <Project>{826cc665-b68d-4e14-b47c-7fba35318e33}</Project>
+      <Name>Bookstore.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bookstore.Models\Bookstore.Models.csproj">
+      <Project>{f2aea227-c475-4495-a8f8-7d95a6fc0fbc}</Project>
+      <Name>Bookstore.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

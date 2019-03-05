@@ -55,7 +55,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminBookListItem.cs" />
-    <Compile Include="Book.cs" />
     <Compile Include="BookCreate.cs" />
     <Compile Include="CartCreate.cs" />
     <Compile Include="UserBookListItem.cs" />
@@ -64,6 +63,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bookstore.Data\Bookstore.Data.csproj">
+      <Project>{826cc665-b68d-4e14-b47c-7fba35318e33}</Project>
+      <Name>Bookstore.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
