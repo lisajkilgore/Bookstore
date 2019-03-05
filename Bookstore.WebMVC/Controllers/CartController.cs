@@ -1,4 +1,6 @@
 ﻿using Bookstore.Models;
+using Bookstore.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,9 @@ namespace Bookstore.WebMVC.Controllers
         // GET: Cart
         public ActionResult Index()
         {
-            var model = new UserBookListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CartService(userId);
+            var model = service.GetUserBooks();
             return View(model);
         }
 
@@ -25,11 +29,16 @@ namespace Bookstore.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CartCreate model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-
+                return View(model);
             }
-            return View(model);
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CartService(userId);
+
+            service.CreateCart(model);
+
+            return RedirectToAction("Cart");
         }
     }
 }
