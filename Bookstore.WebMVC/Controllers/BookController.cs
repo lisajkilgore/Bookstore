@@ -30,16 +30,22 @@ namespace Bookstore.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(BookCreate model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return View(model);
             }
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new BookService(userId);
+            BookService service = CreateBookService();
 
             service.CreateBook(model);
 
             return RedirectToAction("Index");
+        }
+
+        private BookService CreateBookService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new BookService(userId);
+            return service;
         }
     }
 }

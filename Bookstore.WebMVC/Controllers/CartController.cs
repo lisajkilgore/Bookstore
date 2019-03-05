@@ -33,12 +33,18 @@ namespace Bookstore.WebMVC.Controllers
             {
                 return View(model);
             }
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new CartService(userId);
+            CartService service = CreateCartService();
 
             service.CreateCart(model);
 
             return RedirectToAction("Cart");
+        }
+
+        private CartService CreateCartService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CartService(userId);
+            return service;
         }
     }
 }
