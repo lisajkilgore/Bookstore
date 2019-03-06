@@ -67,6 +67,28 @@ namespace Bookstore.WebMVC.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int cartId, CartEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.CartId != cartId)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateCartService();
+
+            if (service.UpdateCart(model))
+            {
+                TempData["SaveResult"] = "Your cart was successully updated.";
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "An error was encountered. Your cart could not be updated.");
+            return View(model);
+        }
         private CartService CreateCartService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

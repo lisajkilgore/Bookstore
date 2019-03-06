@@ -67,12 +67,34 @@ namespace Bookstore.WebMVC.Controllers
             return View(model);
         }
 
-        private BookService CreateBookService()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int bookId, BookEdit model)
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new BookService(userId);
-            return service;
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.BookId != bookId)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+            var service = CreateBookService();
+
+            if (service.UpdateBook(model))
+            {
+                TempData["SaveResult"] = "Your book was successully updated.";
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "An error was encountered. Your book could not be updated.");
+            return View(model);
+        }
+
+            private BookService CreateBookService()
+            {
+                var userId = Guid.Parse(User.Identity.GetUserId());
+                var service = new BookService(userId);
+                return service;
+            }
         }
     }
-}
 
