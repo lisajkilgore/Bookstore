@@ -81,5 +81,24 @@ namespace Bookstore.Services
             }
         }
 
+        public bool UpdateCart(CartEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Cart
+                    .Single(e => e.CartId == model.CartId && e.OwnerId == _userId);
+
+                entity.CartId = model.CartId;
+                entity.OwnerId = model.OwnerId;
+                entity.BookId = model.BookId;
+                entity.Quantity = model.Quantity;
+                entity.Book = model.Book;
+
+                return ctx.SaveChanges() == 1;
+            }
+
+        }
     }
 }

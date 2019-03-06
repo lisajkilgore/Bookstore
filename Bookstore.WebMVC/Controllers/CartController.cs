@@ -43,11 +43,27 @@ namespace Bookstore.WebMVC.Controllers
             return View(model);
         }
 
-        public ActionResult Details(int id)
+        public ActionResult Details(int cartId)
         {
             var svc = CreateCartService();
-            var model = svc.GetCartById(id);
+            var model = svc.GetCartById(cartId);
 
+            return View(model);
+        }
+
+        public ActionResult Edit(int cartId)
+        {
+            var service = CreateCartService();
+            var detail = service.GetCartById(cartId);
+            var model =
+                new CartEdit
+                {
+                    CartId = detail.CartId,
+                    OwnerId = detail.OwnerId,
+                    BookId = detail.BookId,
+                    Quantity = detail.Quantity,
+                    Book = detail.Book
+                };
             return View(model);
         }
 

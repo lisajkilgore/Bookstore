@@ -92,8 +92,23 @@ namespace Bookstore.Services
             }
 
         }
+
+        public bool UpdateBook(BookEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Book
+                    .Single(e => e.BookId == model.BookId && e.OwnerId == _userId);
+                entity.BookId = model.BookId;
+                entity.Title = model.Title;
+                entity.Author = model.Author;
+
+                    return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
-
 
 
