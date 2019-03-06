@@ -30,15 +30,18 @@ namespace Bookstore.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(BookCreate model)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
+            if (!ModelState.IsValid) return View(model);
+
             BookService service = CreateBookService();
 
-            service.CreateBook(model);
+            if (service.CreateBook(model))
+            {
+                ViewBag.SaveResult = "Your book was successally added to the database.";
+                return RedirectToAction("Index");
+            };
+            ModelState.AddModelError("", "An error was encountered. Your book could not be added.");
 
-            return RedirectToAction("Index");
+            return View(model);
         }
 
         private BookService CreateBookService()
@@ -49,3 +52,4 @@ namespace Bookstore.WebMVC.Controllers
         }
     }
 }
+

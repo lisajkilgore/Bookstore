@@ -29,15 +29,18 @@ namespace Bookstore.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CartCreate model)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
+            if (!ModelState.IsValid) return View(model);
+
             CartService service = CreateCartService();
 
-            service.CreateCart(model);
+            if (service.CreateCart(model))
+            {
+                ViewBag.SaveResult = "Your cart has been successully updated.";
+                return RedirectToAction("Cart");
+            };
 
-            return RedirectToAction("Cart");
+            ModelState.AddModelError("", "An error was encountered. Your cart was not updated.");
+            return View(model);
         }
 
         private CartService CreateCartService()
