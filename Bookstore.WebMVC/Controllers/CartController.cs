@@ -35,7 +35,7 @@ namespace Bookstore.WebMVC.Controllers
 
             if (service.CreateCart(model))
             {
-                ViewBag.SaveResult = "Your cart has been successully updated.";
+                TempData["SaveResult"] = "Your cart has been successully updated.";
                 return RedirectToAction("Cart");
             };
 
