@@ -16,8 +16,5 @@ namespace Bookstore.Models
         public virtual Book Book { get; set; }
 
 
-        public string Content { get; set; }
-        public override string ToString() => $"[{CartId}] {OwnerId} {BookId} {Quantity} {Book}";
-
     }
 }

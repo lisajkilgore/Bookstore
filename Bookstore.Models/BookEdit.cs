@@ -19,8 +19,5 @@ namespace Bookstore.Models
         public int Quantity { get; set; }
         public BookType TypeOfBook { get; set; }
 
-
-        public string Content { get; set; }
-        public override string ToString() => $"[{BookId}] {Title}";
     }
 }

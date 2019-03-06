@@ -1,7 +1,9 @@
 ﻿@model IEnumerable<Bookstore.Models.AdminBookListItem>
 
 @{
-    ViewBag.Title = "Index";
+                /**/
+
+                ViewBag.Title = "Index";
 }
 
 <h2>Book Database</h2>
@@ -82,9 +84,9 @@
                 @Html.DisplayFor(modelItem => item.Author)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.BookId}) |
-                @Html.ActionLink("Details", "Details", new { id=item.BookId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.BookId })
+                @Html.ActionLink("Edit", "Edit", new { id = item.BookId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.BookId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.BookId })
             </td>
         </tr>
     }

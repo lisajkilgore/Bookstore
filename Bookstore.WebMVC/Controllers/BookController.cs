@@ -44,18 +44,18 @@ namespace Bookstore.WebMVC.Controllers
             return View(model);
         }
 
-        public ActionResult Details(int bookId)
+        public ActionResult Details(int id)
         {
             var svc = CreateBookService();
-            var model = svc.GetBookById(bookId);
+            var model = svc.GetBookById(id);
 
             return View(model);
         }
 
-        public ActionResult Edit(int bookId)
+        public ActionResult Edit(int id)
         {
             var service = CreateBookService();
-            var detail = service.GetBookById(bookId);
+            var detail = service.GetBookById(id);
             var model =
                 new BookEdit
                 {
@@ -69,11 +69,11 @@ namespace Bookstore.WebMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int bookId, BookEdit model)
+        public ActionResult Edit(int id, BookEdit model)
         {
             if (!ModelState.IsValid) return View(model);
 
-            if (model.BookId != bookId)
+            if (model.BookId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
