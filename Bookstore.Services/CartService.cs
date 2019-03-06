@@ -49,6 +49,7 @@ namespace Bookstore.Services
                         new UserBookListItem
                         {
                             CartId = e.CartId,
+                            OwnerId = e.OwnerId,
                             BookId = e.BookId,
                             Quantity = e.Quantity,
                             Book = e.Book,
@@ -58,5 +59,27 @@ namespace Bookstore.Services
                 return query.ToArray();
             }
         }
+
+        public CartDetail GetCartById(int cartId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Cart
+                    .Single(e => e.CartId == cartId && e.OwnerId == _userId);
+                return
+                    new CartDetail
+                    {
+                        CartId = entity.CartId,
+                        OwnerId = entity.OwnerId,
+                        BookId = entity.BookId,
+                        Quantity = entity.Quantity,
+                        Book = entity.Book
+                    };
+
+            }
+        }
+
     }
 }

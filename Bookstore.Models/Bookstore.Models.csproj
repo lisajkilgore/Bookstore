@@ -56,7 +56,9 @@
   <ItemGroup>
     <Compile Include="AdminBookListItem.cs" />
     <Compile Include="BookCreate.cs" />
+    <Compile Include="BookDetail.cs" />
     <Compile Include="CartCreate.cs" />
+    <Compile Include="CartDetail.cs" />
     <Compile Include="UserBookListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

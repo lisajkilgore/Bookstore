@@ -25,6 +25,7 @@ namespace Bookstore.Services
                 new Book()
                 {
                     OwnerId = _userId,
+                    BookId = model.BookId,
                     Title = model.Title,
                     Author = model.Author,
                     IsFiction = model.IsFiction,
@@ -55,6 +56,7 @@ namespace Bookstore.Services
 
                     new AdminBookListItem
                     {
+                        BookId = e.BookId,
                         Title = e.Title,
                         Author = e.Author,
                         IsFiction = e.IsFiction,
@@ -71,7 +73,27 @@ namespace Bookstore.Services
                 return query.ToArray();
             }
         }
+
+        public BookDetail GetBookById(int bookId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                ctx
+                .Book
+                .Single(e => e.BookId == bookId && e.OwnerId == _userId);
+                return
+                    new BookDetail
+                    {
+                        BookId = entity.BookId,
+                        Title = entity.Title,
+                        Author = entity.Author
+                    };
+            }
+
+        }
     }
 }
+
 
 

@@ -1,17 +1,14 @@
 ﻿using Bookstore.Data;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Bookstore.Models
 {
-
-    public class BookCreate
+    public class BookDetail
     {
-        [Required]
         public int BookId { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
@@ -22,8 +19,8 @@ namespace Bookstore.Models
         public int Quantity { get; set; }
         public BookType TypeOfBook { get; set; }
 
-        [MaxLength(8000)]
+        
         public string Content { get; set; }
-        public override string ToString() => Title;
+        public override string ToString() => $"[{BookId}] {Title}";
     }
 }

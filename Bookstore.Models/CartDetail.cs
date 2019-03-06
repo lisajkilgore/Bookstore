@@ -1,16 +1,14 @@
 ﻿using Bookstore.Data;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Bookstore.Models
 {
-    public class CartCreate
+   public class CartDetail
     {
-        [Required]
         public int CartId { get; set; }
         public Guid OwnerId { get; set; }
         public int BookId { get; set; }
@@ -18,10 +16,11 @@ namespace Bookstore.Models
         public virtual Book Book { get; set; }
 
 
-        [MaxLength(8000)]
         public string Content { get; set; }
+        public override string ToString() => $"[{CartId}] {OwnerId} {BookId} {Quantity} {Book}";
+
+
+
 
     }
 }
-
-

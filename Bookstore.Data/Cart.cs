@@ -13,10 +13,10 @@ namespace Bookstore.Data
         public int CartId { get; set; }
 
         [Required]
-        public int BookId { get; set; }
+        public Guid OwnerId { get; set; }
 
         [Required]
-        public Guid OwnerId { get; set; }
+        public int BookId { get; set; }
 
         [Required]
         public int Quantity { get; set; }
