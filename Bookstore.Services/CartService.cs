@@ -26,6 +26,8 @@ namespace Bookstore.Services
                     CartId = model.CartId,
                     BookId = model.BookId,
                     Quantity = model.Quantity,
+                    Price = model.Price,
+                    CartTotal = model.CartTotal,
                     Book = model.Book,
                 };
 
@@ -52,6 +54,8 @@ namespace Bookstore.Services
                             OwnerId = e.OwnerId,
                             BookId = e.BookId,
                             Quantity = e.Quantity,
+                            Price = e.Price,
+                            CartTotal = e.CartTotal,
                             Book = e.Book,
 
                         }
@@ -75,6 +79,8 @@ namespace Bookstore.Services
                         OwnerId = entity.OwnerId,
                         BookId = entity.BookId,
                         Quantity = entity.Quantity,
+                        Price = entity.Price,
+                        CartTotal = entity.CartTotal,
                         Book = entity.Book
                     };
 
@@ -94,6 +100,8 @@ namespace Bookstore.Services
                 entity.OwnerId = model.OwnerId;
                 entity.BookId = model.BookId;
                 entity.Quantity = model.Quantity;
+                entity.Price = model.Price;
+                entity.CartTotal = model.CartTotal;
                 entity.Book = model.Book;
 
                 return ctx.SaveChanges() == 1;

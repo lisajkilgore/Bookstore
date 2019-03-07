@@ -62,6 +62,8 @@ namespace Bookstore.WebMVC.Controllers
                     OwnerId = detail.OwnerId,
                     BookId = detail.BookId,
                     Quantity = detail.Quantity,
+                    Price = detail.Price,
+                    CartTotal = detail.CartTotal,
                     Book = detail.Book
                 };
             return View(model);

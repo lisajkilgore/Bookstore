@@ -13,6 +13,8 @@ namespace Bookstore.Models
         public int BookId { get; set; }
         public Guid OwnerId { get; set; }
         public int Quantity { get; set; }
+        public decimal Price { get; set; }
+        public decimal CartTotal { get; set; }
         public virtual Book Book { get; set; }
 
         public override string ToString()
