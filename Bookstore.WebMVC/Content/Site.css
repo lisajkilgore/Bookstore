@@ -1,4 +1,9 @@
-﻿.navbar-header {
+﻿.navbar.navbar-inverse.navbar-fixed-top {
+    background-color: #435458;
+    font-size: 1.4em;
+}
+
+.navbar-header {
     background-color: #435458;
 }
 
@@ -66,4 +71,13 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+footer {
+   
+    background-color: #435458;
+    font-size: 1em;
+    padding: 20px 20px 20px 0px;
+    width: 100%;
+    
 }
