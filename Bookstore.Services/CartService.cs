@@ -98,7 +98,21 @@ namespace Bookstore.Services
 
                 return ctx.SaveChanges() == 1;
             }
+        }
 
+        public bool DeleteCart(int cartId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Cart
+                    .Single(e => e.CartId == cartId && e.OwnerId == _userId);
+
+                ctx.Cart.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
         }
     }
 }

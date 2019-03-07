@@ -108,6 +108,21 @@ namespace Bookstore.Services
                     return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteBook(int bookId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Book
+                    .Single(e => e.BookId == bookId && e.OwnerId == _userId);
+
+                ctx.Book.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
 

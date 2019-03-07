@@ -67,6 +67,15 @@ namespace Bookstore.WebMVC.Controllers
             return View(model);
         }
 
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateBookService();
+            var model = svc.GetBookById(id);
+
+            return View(model);
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, BookEdit model)
@@ -89,12 +98,27 @@ namespace Bookstore.WebMVC.Controllers
             return View(model);
         }
 
-            private BookService CreateBookService()
-            {
-                var userId = Guid.Parse(User.Identity.GetUserId());
-                var service = new BookService(userId);
-                return service;
-            }
+        private BookService CreateBookService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new BookService(userId);
+            return service;
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateBookService();
+
+            service.DeleteBook(id);
+
+            TempData["SaveResult"] = "Your book was deleted.";
+
+            return RedirectToAction("Index");
         }
     }
+
+}
 

@@ -66,6 +66,14 @@ namespace Bookstore.WebMVC.Controllers
                 };
             return View(model);
         }
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateCartService();
+            var model = svc.GetCartById(id);
+
+            return View(model);
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -94,6 +102,20 @@ namespace Bookstore.WebMVC.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new CartService(userId);
             return service;
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateCartService();
+
+            service.DeleteCart(id);
+
+            TempData["SaveResult"] = "Your cart was deleted.";
+
+            return RedirectToAction("Index");
         }
     }
 }
