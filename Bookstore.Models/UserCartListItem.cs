@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bookstore.Models
 {
-    public class UserBookListItem
+    public class UserCartListItem
     {
         public int CartId { get; set; }
         public int BookId { get; set; }

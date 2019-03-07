@@ -61,7 +61,7 @@
     <Compile Include="CartCreate.cs" />
     <Compile Include="CartDetail.cs" />
     <Compile Include="CartEdit.cs" />
-    <Compile Include="UserBookListItem.cs" />
+    <Compile Include="UserCartListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -17,10 +17,6 @@ namespace Bookstore.Models
         public int Quantity { get; set; }
         public virtual Book Book { get; set; }
 
-
-        [MaxLength(8000)]
-        public string Content { get; set; }
-
     }
 }
 

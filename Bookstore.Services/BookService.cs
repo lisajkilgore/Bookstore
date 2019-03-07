@@ -26,6 +26,7 @@ namespace Bookstore.Services
                 {
                     OwnerId = _userId,
                     BookId = model.BookId,
+                    TypeOfBook = model.TypeOfBook,
                     Title = model.Title,
                     Author = model.Author,
                     IsFiction = model.IsFiction,
@@ -33,7 +34,6 @@ namespace Bookstore.Services
                     IsBestSeller = model.IsBestSeller,
                     Price = model.Price,
                     Quantity = model.Quantity,
-                    TypeOfBook = model.TypeOfBook
 
                 };
             using (var ctx = new ApplicationDbContext())
@@ -57,6 +57,7 @@ namespace Bookstore.Services
                     new AdminBookListItem
                     {
                         BookId = e.BookId,
+                        TypeOfBook = e.TypeOfBook,
                         Title = e.Title,
                         Author = e.Author,
                         IsFiction = e.IsFiction,
@@ -64,7 +65,7 @@ namespace Bookstore.Services
                         IsBestSeller = e.IsBestSeller,
                         Price = e.Price,
                         Quantity = e.Quantity,
-                        TypeOfBook = e.TypeOfBook
+                        
                     }
 
 
@@ -86,8 +87,14 @@ namespace Bookstore.Services
                     new BookDetail
                     {
                         BookId = entity.BookId,
+                        TypeOfBook = entity.TypeOfBook,
                         Title = entity.Title,
-                        Author = entity.Author
+                        Author = entity.Author,
+                        IsFiction = entity.IsFiction,
+                        IsNewRelease = entity.IsNewRelease,
+                        IsBestSeller = entity.IsBestSeller,
+                        Price = entity.Price,
+                        Quantity = entity.Quantity
                     };
             }
 
@@ -102,8 +109,14 @@ namespace Bookstore.Services
                     .Book
                     .Single(e => e.BookId == model.BookId && e.OwnerId == _userId);
                 entity.BookId = model.BookId;
+                entity.TypeOfBook = model.TypeOfBook;
                 entity.Title = model.Title;
                 entity.Author = model.Author;
+                entity.IsFiction = model.IsFiction;
+                entity.IsNewRelease = model.IsNewRelease;
+                entity.IsBestSeller = model.IsBestSeller;
+                entity.Price = model.Price;
+                entity.Quantity = model.Quantity;
 
                     return ctx.SaveChanges() == 1;
             }

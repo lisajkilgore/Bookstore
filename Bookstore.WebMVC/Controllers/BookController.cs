@@ -60,19 +60,16 @@ namespace Bookstore.WebMVC.Controllers
                 new BookEdit
                 {
                     BookId = detail.BookId,
+                    TypeOfBook = detail.TypeOfBook,
                     Title = detail.Title,
-                    Author = detail.Author
+                    Author = detail.Author,
+                    IsFiction = detail.IsFiction,
+                    IsNewRelease = detail.IsNewRelease,
+                    IsBestSeller = detail.IsBestSeller,
+                    Price = detail.Price,
+                    Quantity = detail.Quantity
 
                 };
-            return View(model);
-        }
-
-        [ActionName("Delete")]
-        public ActionResult Delete(int id)
-        {
-            var svc = CreateBookService();
-            var model = svc.GetBookById(id);
-
             return View(model);
         }
 
@@ -97,6 +94,18 @@ namespace Bookstore.WebMVC.Controllers
             ModelState.AddModelError("", "An error was encountered. Your book could not be updated.");
             return View(model);
         }
+
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateBookService();
+            var model = svc.GetBookById(id);
+
+            return View(model);
+        }
+
+
 
         private BookService CreateBookService()
         {

@@ -36,7 +36,7 @@ namespace Bookstore.Services
             }
         }
 
-        public IEnumerable<UserBookListItem> GetUserBooks()
+        public IEnumerable<UserCartListItem> GetUserBooks()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -46,7 +46,7 @@ namespace Bookstore.Services
                     .Where(e => e.OwnerId == _userId)
                     .Select(
                         e =>
-                        new UserBookListItem
+                        new UserCartListItem
                         {
                             CartId = e.CartId,
                             OwnerId = e.OwnerId,

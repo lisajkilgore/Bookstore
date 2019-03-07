@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bookstore.Models
 {
-   public class CartDetail
+    public class CartDetail
     {
         public int CartId { get; set; }
         public Guid OwnerId { get; set; }
@@ -15,12 +15,7 @@ namespace Bookstore.Models
         public int Quantity { get; set; }
         public virtual Book Book { get; set; }
 
-
-        public string Content { get; set; }
         public override string ToString() => $"[{CartId}] {OwnerId} {BookId} {Quantity} {Book}";
-
-
-
 
     }
 }

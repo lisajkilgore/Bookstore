@@ -17,20 +17,8 @@ namespace Bookstore.Data
         [Required]
         public Guid OwnerId { get; set; }
                
-        [DefaultValue(true)]
-        public bool IsFiction { get; set; }
-
-        [DefaultValue(false)]
-        public bool IsNewRelease { get; set; }
-
-        [DefaultValue(false)]
-        public bool IsBestSeller { get; set; }
-
         [Required]
-        public decimal Price { get; set; }
-
-        [Required]
-        public int Quantity { get; set; }
+        public BookType TypeOfBook { get; set; }
 
         [Required]
         public string Title { get; set; }
@@ -39,6 +27,22 @@ namespace Bookstore.Data
         public string Author { get; set; }
 
         [Required]
-        public BookType TypeOfBook { get; set; }
+        [DefaultValue(true)]
+        public bool IsFiction { get; set; }
+
+        [Required]
+        [DefaultValue(false)]
+        public bool IsNewRelease { get; set; }
+
+        [Required]
+        [DefaultValue(false)]
+        public bool IsBestSeller { get; set; }
+
+        [Required]
+        public decimal Price { get; set; }
+
+        [Required]
+        public int Quantity { get; set; }
     }
 }
+
