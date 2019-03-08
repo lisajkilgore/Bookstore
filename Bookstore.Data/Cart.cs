@@ -29,7 +29,6 @@ namespace Bookstore.Data
         [DisplayName("Total Cost")]
         public decimal CartTotal { get; set; }
 
-        [Required]
         public virtual Book Book { get; set; }
     }
 }

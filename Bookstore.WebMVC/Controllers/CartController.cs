@@ -36,7 +36,7 @@ namespace Bookstore.WebMVC.Controllers
             if (service.CreateCart(model))
             {
                 TempData["SaveResult"] = "Your cart has been successully updated.";
-                return RedirectToAction("Cart");
+                return RedirectToAction("Index");
             };
 
             ModelState.AddModelError("", "An error was encountered. Your cart was not updated.");

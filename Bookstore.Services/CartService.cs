@@ -28,7 +28,6 @@ namespace Bookstore.Services
                     Quantity = model.Quantity,
                     Price = model.Price,
                     CartTotal = model.CartTotal,
-                    Book = model.Book,
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -56,8 +55,6 @@ namespace Bookstore.Services
                             Quantity = e.Quantity,
                             Price = e.Price,
                             CartTotal = e.CartTotal,
-                            Book = e.Book,
-
                         }
                         );
                 return query.ToArray();
@@ -81,7 +78,6 @@ namespace Bookstore.Services
                         Quantity = entity.Quantity,
                         Price = entity.Price,
                         CartTotal = entity.CartTotal,
-                        Book = entity.Book
                     };
 
             }
@@ -102,7 +98,6 @@ namespace Bookstore.Services
                 entity.Quantity = model.Quantity;
                 entity.Price = model.Price;
                 entity.CartTotal = model.CartTotal;
-                entity.Book = model.Book;
 
                 return ctx.SaveChanges() == 1;
             }
