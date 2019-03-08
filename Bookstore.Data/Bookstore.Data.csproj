@@ -73,6 +73,14 @@
     <Compile Include="Migrations\201903072108477_Cart.Designer.cs">
       <DependentUpon>201903072108477_Cart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903081523534_update.cs" />
+    <Compile Include="Migrations\201903081523534_update.Designer.cs">
+      <DependentUpon>201903081523534_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903081533473_update1.cs" />
+    <Compile Include="Migrations\201903081533473_update1.Designer.cs">
+      <DependentUpon>201903081533473_update1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -92,6 +100,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903072108477_Cart.resx">
       <DependentUpon>201903072108477_Cart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903081523534_update.resx">
+      <DependentUpon>201903081523534_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903081533473_update1.resx">
+      <DependentUpon>201903081533473_update1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

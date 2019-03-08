@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,10 +15,10 @@ namespace Bookstore.Data
         public int CartId { get; set; }
 
         [Required]
-        public Guid OwnerId { get; set; }
+        public int BookId { get; set; }
 
         [Required]
-        public int BookId { get; set; }
+        public Guid OwnerId { get; set; }
 
         [Required]
         public int Quantity { get; set; }
@@ -29,6 +30,7 @@ namespace Bookstore.Data
         [DisplayName("Total Cost")]
         public decimal CartTotal { get; set; }
 
+        //[ForeignKey("BookId")]
         public virtual Book Book { get; set; }
     }
 }
