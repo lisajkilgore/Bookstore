@@ -36,16 +36,18 @@ namespace Bookstore.WebMVC
 
                 var chkUser = UserManager.Create(user, userPWD);
 
-                if(chkUser.Succeeded)
+                if (chkUser.Succeeded)
                 {
                     var result1 = UserManager.AddToRole(user.Id, "Admin");
                 }
             }
+
             if (!roleManager.RoleExists("User"))
             {
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
                 role.Name = "User";
                 roleManager.Create(role);
+
             }
         }
     }

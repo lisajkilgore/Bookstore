@@ -54,7 +54,7 @@ namespace Bookstore.Data
     {
         public IdentityUserRoleConfiguration()
         {
-            HasKey(iur => iur.RoleId);
+            HasKey(iur => iur.UserId);
         }
     }
 }

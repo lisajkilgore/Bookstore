@@ -10,11 +10,11 @@
 
 
 h1 {
-    padding-top: 25px;
+    padding-top: 50px;
     padding-bottom: 25px;
     color: white;
     font-family: 'Special Elite', cursive;
-    font-size: 4em;
+    font-size: 6em;
     text-align: center;
     text-shadow: 1px 1px 4px black;
 }
@@ -51,7 +51,7 @@ p {
 
 
 body {
-    padding-top: 5px;
+    padding-top: 50px;
     padding-bottom: 5px;
     background-color: #dce7ea;
     padding-top: 5px;
@@ -60,7 +60,7 @@ body {
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-top: 5px;
+    padding-top: 50px;
     padding-bottom: 5px;
     background-color: #dce7ea;
     padding-top: 5px;
@@ -83,7 +83,7 @@ textarea {
 }
 
 footer {
-    background-color: #005b96;
+    background-color: #708090;
     font-size: 1em;
     padding: 20px 20px 20px 0px;
     width: 100%;

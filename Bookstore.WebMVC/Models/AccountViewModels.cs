@@ -65,7 +65,7 @@ namespace Bookstore.WebMVC.Models
 
     public class RegisterViewModel
     {
-        [Required]
+        
         [Display(Name = "UserRoles")]
         public string UserRoles { get; set; }
 
