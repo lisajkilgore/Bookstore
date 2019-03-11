@@ -9,10 +9,11 @@ using System.Web.Mvc;
 
 namespace Bookstore.WebMVC.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class BookController : Controller
     {
         // GET: Book
+        
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

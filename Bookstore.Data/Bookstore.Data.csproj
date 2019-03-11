@@ -57,56 +57,11 @@
     <Compile Include="Book.cs" />
     <Compile Include="Cart.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\201903050419504_initial migration.cs" />
-    <Compile Include="Migrations\201903050419504_initial migration.Designer.cs">
-      <DependentUpon>201903050419504_initial migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903052026373_Update-Database.cs" />
-    <Compile Include="Migrations\201903052026373_Update-Database.Designer.cs">
-      <DependentUpon>201903052026373_Update-Database.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903071913534_UserCartListItem.cs" />
-    <Compile Include="Migrations\201903071913534_UserCartListItem.Designer.cs">
-      <DependentUpon>201903071913534_UserCartListItem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903072108477_Cart.cs" />
-    <Compile Include="Migrations\201903072108477_Cart.Designer.cs">
-      <DependentUpon>201903072108477_Cart.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903081523534_update.cs" />
-    <Compile Include="Migrations\201903081523534_update.Designer.cs">
-      <DependentUpon>201903081523534_update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903081533473_update1.cs" />
-    <Compile Include="Migrations\201903081533473_update1.Designer.cs">
-      <DependentUpon>201903081533473_update1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903050419504_initial migration.resx">
-      <DependentUpon>201903050419504_initial migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903052026373_Update-Database.resx">
-      <DependentUpon>201903052026373_Update-Database.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903071913534_UserCartListItem.resx">
-      <DependentUpon>201903071913534_UserCartListItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903072108477_Cart.resx">
-      <DependentUpon>201903072108477_Cart.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903081523534_update.resx">
-      <DependentUpon>201903081523534_update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903081533473_update1.resx">
-      <DependentUpon>201903081533473_update1.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
