@@ -27,7 +27,7 @@ namespace Bookstore.Services
                     BookId = model.BookId,
                     Quantity = model.Quantity,
                     Price = model.Price,
-                    CartTotal = model.CartTotal,
+                    ItemTotal = model.ItemTotal
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -54,7 +54,7 @@ namespace Bookstore.Services
                             BookId = e.BookId,
                             Quantity = e.Quantity,
                             Price = e.Price,
-                            CartTotal = e.CartTotal,
+                            
                         }
                         );
                 return query.ToArray();
@@ -77,7 +77,7 @@ namespace Bookstore.Services
                         BookId = entity.BookId,
                         Quantity = entity.Quantity,
                         Price = entity.Price,
-                        CartTotal = entity.CartTotal,
+                        ItemTotal = entity.ItemTotal,
                     };
 
             }
@@ -97,7 +97,7 @@ namespace Bookstore.Services
                 entity.BookId = model.BookId;
                 entity.Quantity = model.Quantity;
                 entity.Price = model.Price;
-                entity.CartTotal = model.CartTotal;
+                entity.ItemTotal = model.ItemTotal;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -118,11 +118,6 @@ namespace Bookstore.Services
             }
         }
 
-        private decimal CalculateCartTotal(int Quantity, decimal Price)
-        {
-            decimal CartTotal = Quantity * Price;
-
-            return CartTotal;
-        }
     }
 }
+

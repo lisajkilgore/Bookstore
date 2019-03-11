@@ -27,6 +27,9 @@ namespace Bookstore.Data
         public decimal Price{ get; set; }
 
         [Required]
+        public decimal ItemTotal { get; set; }
+
+        [Required]
         [DisplayName("Total Cost")]
         public decimal CartTotal { get; set; }
 

@@ -63,7 +63,7 @@ namespace Bookstore.WebMVC.Controllers
                     BookId = detail.BookId,
                     Quantity = detail.Quantity,
                     Price = detail.Price,
-                    CartTotal = detail.CartTotal,
+                    ItemTotal = detail.ItemTotal,
                     Book = detail.Book
                 };
             return View(model);
@@ -119,5 +119,6 @@ namespace Bookstore.WebMVC.Controllers
 
             return RedirectToAction("Index");
         }
+
     }
 }
