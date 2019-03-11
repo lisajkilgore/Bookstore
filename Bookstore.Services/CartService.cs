@@ -47,7 +47,7 @@ namespace Bookstore.Services
                     .Where(e => e.OwnerId == _userId)
                     .Select(
                         e =>
-                        new UserCartListItem
+                        new Models.UserCartListItem
                         {
                             CartId = e.CartId,
                             OwnerId = e.OwnerId,
@@ -116,6 +116,13 @@ namespace Bookstore.Services
 
                 return ctx.SaveChanges() == 1;
             }
+        }
+
+        private decimal CalculateCartTotal(int Quantity, decimal Price)
+        {
+            decimal CartTotal = Quantity * Price;
+
+            return CartTotal;
         }
     }
 }

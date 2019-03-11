@@ -7,12 +7,14 @@
     background-color: #435458;
 }
 
+
+
 h1 {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     color: white;
     font-family: 'Special Elite', cursive;
-    font-size: 8em;
+    font-size: 4em;
     text-align: center;
     text-shadow: 1px 1px 4px black;
 }
@@ -20,17 +22,17 @@ h1 {
 h2 {
     color: #662771;
     font-family: 'Special Elite', cursive;
-    font-size: 3em;
+    font-size: 2em;
     text-align: center;
     text-shadow: 1px 1px 4px black;
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 10px;
 }
 
 h3 {
     color: #662771;
     font-family: 'Italianno', cursive;
-    font-size: 3em;
+    font-size: 4em;
     text-align: center;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -43,10 +45,14 @@ p {
     text-align: left;
 }
 
-
+.btn.btn-primary {
+    align-items: center;
+}
 
 
 body {
+    padding-top: 5px;
+    padding-bottom: 5px;
     background-color: #dce7ea;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -54,10 +60,13 @@ body {
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
+    padding-top: 5px;
+    padding-bottom: 5px;
     background-color: #dce7ea;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
+
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -74,10 +83,8 @@ textarea {
 }
 
 footer {
-   
     background-color: #435458;
     font-size: 1em;
     padding: 20px 20px 20px 0px;
     width: 100%;
-    
 }

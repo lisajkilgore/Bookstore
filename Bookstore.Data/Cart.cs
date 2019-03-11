@@ -30,7 +30,7 @@ namespace Bookstore.Data
         [DisplayName("Total Cost")]
         public decimal CartTotal { get; set; }
 
-        //[ForeignKey("BookId")]
+        
         public virtual Book Book { get; set; }
     }
 }
