@@ -27,7 +27,6 @@ namespace Bookstore.Services
                     OwnerId = _userId,
                     CartId = model.CartId,
                     BookId = model.BookId,
-                    Title = model.Title,
                     Quantity = model.Quantity,
                     Price = model.Price,
                     ItemTotal = model.ItemTotal
@@ -54,7 +53,7 @@ namespace Bookstore.Services
                             CartId = e.CartId,
                             OwnerId = e.OwnerId,
                             BookId = e.BookId,
-                            Title = e.Title,
+                            Title = e.Book.Title,
                             Quantity = e.Quantity,
                             Price = e.Price,
                             ItemTotal = e.ItemTotal,
@@ -95,12 +94,10 @@ namespace Bookstore.Services
                         CartId = entity.CartId,
                         OwnerId = entity.OwnerId,
                         BookId = entity.BookId,
-                        Title = entity.Title,
                         Quantity = entity.Quantity,
                         Price = entity.Price,
                         ItemTotal = entity.ItemTotal,
                     };
-
             }
         }
 
@@ -116,7 +113,6 @@ namespace Bookstore.Services
                 entity.CartId = model.CartId;
                 entity.OwnerId = model.OwnerId;
                 entity.BookId = model.BookId;
-                entity.Title = model.Title;
                 entity.Quantity = model.Quantity;
                 entity.Price = model.Price;
                 entity.ItemTotal = model.ItemTotal;
