@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bookstore.Models
 {
-    public class CartTable
+    public class CartTotalModel
     {
         public decimal CartTotal { get; set; }
         public IEnumerable<UserCartListItem> CartItems { get; set; }

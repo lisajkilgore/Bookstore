@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Bookstore.Models.UserCartListItem>
+﻿@model Bookstore.Models.CartTotalModel
 
 @{
     ViewBag.Title = "Index";
@@ -12,54 +12,37 @@
 
 @if (TempData.ContainsKey("SaveResult"))
 {
-<div class="alert alert-success fade in" role="alert">
-    
-    <button type="button" class="close" data-dismiss="alert">
-        <span>&times;</span>
-    </button>
-    @TempData["SaveResult"]
-</div>
+    <div class="alert alert-success fade in" role="alert">
+
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
 }
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CartId)
+           @Html.DisplayNameFor(model => model.CartItems.First<Bookstore.Models.UserCartListItem>().Title)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.OwnerId)
+            @Html.DisplayNameFor(model => model.CartItems.First<Bookstore.Models.UserCartListItem>().Quantity)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.BookId)
+            @Html.DisplayNameFor(model => model.CartItems.First<Bookstore.Models.UserCartListItem>().Price)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Book)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ItemTotal)
+            @Html.DisplayNameFor(model => model.CartItems.First<Bookstore.Models.UserCartListItem>().ItemTotal)
         </th>
         <th></th>
+        <th>Cart Total</th>
     </tr>
 
-    @foreach (var item in Model)
+    @foreach (var item in Model.CartItems)
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.CartId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OwnerId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BookId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Book)
+                @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Quantity)
@@ -76,7 +59,15 @@
                 @Html.ActionLink("Delete", "Delete", new { id = item.CartId })
             </td>
         </tr>
-
     }
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                @Html.DisplayFor(model => model.CartTotal)
+            </td>
+        </tr>
+
 
 </table>

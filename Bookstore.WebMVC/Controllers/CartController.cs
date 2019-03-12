@@ -17,12 +17,17 @@ namespace Bookstore.WebMVC.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new CartService(userId);
-            var model = service.GetUserBooks();
+            var model = service.GetUserCart();
             return View(model);
         }
 
         public ActionResult Create()
         {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var cartService = new CartService(userId);
+            var cartList = cartService.GetUserBooks();
+
+            ViewBag.CartId = new UserCartListItem();
             return View();
         }
         [HttpPost]

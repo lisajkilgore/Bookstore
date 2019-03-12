@@ -19,23 +19,25 @@ namespace Bookstore.Services
 
         public bool CreateCart(CartCreate model)
         {
-            var entity =
-                new Cart()
+            using (var ctx = new ApplicationDbContext())
+            {
+              
+                var cart = new Cart()
                 {
                     OwnerId = _userId,
                     CartId = model.CartId,
                     BookId = model.BookId,
+                    Title = model.Title,
                     Quantity = model.Quantity,
                     Price = model.Price,
                     ItemTotal = model.ItemTotal
                 };
-
-            using (var ctx = new ApplicationDbContext())
-            {
-                ctx.Cart.Add(entity);
+                cart.ItemTotal = cart.Price * Convert.ToDecimal(model.Quantity);
+                ctx.Cart.Add(cart);
                 return ctx.SaveChanges() == 1;
             }
         }
+
 
         public IEnumerable<UserCartListItem> GetUserBooks()
         {
@@ -52,13 +54,31 @@ namespace Bookstore.Services
                             CartId = e.CartId,
                             OwnerId = e.OwnerId,
                             BookId = e.BookId,
+                            Title = e.Title,
                             Quantity = e.Quantity,
                             Price = e.Price,
-                            
+                            ItemTotal = e.ItemTotal,
+
                         }
                         );
                 return query.ToArray();
             }
+        }
+
+        public CartTotalModel GetUserCart()
+        {
+            var userBooks = GetUserBooks();
+            var cartTotal = 0m;
+            foreach (var book in userBooks)
+            {
+                cartTotal += book.ItemTotal;
+            }
+
+            return new CartTotalModel()
+            {
+                CartTotal = cartTotal,
+                CartItems = userBooks,
+            };
         }
 
         public CartDetail GetCartById(int cartId)
@@ -75,6 +95,7 @@ namespace Bookstore.Services
                         CartId = entity.CartId,
                         OwnerId = entity.OwnerId,
                         BookId = entity.BookId,
+                        Title = entity.Title,
                         Quantity = entity.Quantity,
                         Price = entity.Price,
                         ItemTotal = entity.ItemTotal,
@@ -95,6 +116,7 @@ namespace Bookstore.Services
                 entity.CartId = model.CartId;
                 entity.OwnerId = model.OwnerId;
                 entity.BookId = model.BookId;
+                entity.Title = model.Title;
                 entity.Quantity = model.Quantity;
                 entity.Price = model.Price;
                 entity.ItemTotal = model.ItemTotal;
