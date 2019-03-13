@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<Bookstore.Models.AdminBookListItem>
 
 @{
-                /**/
+    /**/
 
-                ViewBag.Title = "Index";
+    ViewBag.Title = "Index";
 }
 
 <h2>Book Database</h2>
@@ -24,7 +24,9 @@
 <table class="table">
     <tr>
         <th>
+
             @Html.DisplayNameFor(model => model.TypeOfBook)
+            
         </th>
         <th>
             @Html.DisplayNameFor(model => model.BookId)
