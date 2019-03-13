@@ -21,7 +21,7 @@ namespace Bookstore.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-              
+
                 var cart = new Cart()
                 {
                     OwnerId = _userId,
@@ -136,6 +136,58 @@ namespace Bookstore.Services
             }
         }
 
+        // public ActionResult AddToCart(int bookId)
+        //{
+        //    CartCreate cartCreate = new CartCreate();
+
+        //    var svc = CreateCartService();
+
+        //    svc.AddToCart(bookId);
+        //    if (Session["cart"] == null)
+        //    {
+        //        List<UserCartListItem> cart = new List<UserCartListItem>();
+        //        cart.Add(new UserCartListItem { CartId = cartCreate.BookId, Quantity = 1 });
+        //        Session["cart"] = cart;
+        //    }
+        //    else
+        //    {
+        //        List<UserCartListItem> cart = (List<UserCartListItem>)Session["cart"];
+        //        int index = isExist(bookId);
+        //        if (index != -1)
+        //        {
+        //            cart[index].Quantity++;
+        //        }
+        //        else
+        //        {
+        //            cart.Add(new UserCartListItem { CartId = cartCreate.BookId, Quantity = 1 });
+        //        }
+        //        Session["cart"] = cart;
+        //    }
+        //    return RedirectToAction("Cart");
+        //}
+        //private int isExist(int bookId)
+        //{
+        //    List<UserCartListItem> cart = (List<UserCartListItem>)Session["cart"];
+        //    for (int i = 0; i < cart.Count; i++)
+        //        if (cart[i].CartId.Equals(bookId))
+        //            return i;
+        //    return -1;
+        //}
+
+        public bool AddToCart(BookDetail book)
+        {
+            CartCreate cartCreate = new CartCreate()
+            {
+                BookId = book.BookId,
+                Price = book.Price,
+                Quantity = 1,
+                ItemTotal = 1,
+                OwnerId = _userId
+            };
+
+            return CreateCart(cartCreate);
+        }
     }
 }
+ 
 

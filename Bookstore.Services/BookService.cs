@@ -82,7 +82,7 @@ namespace Bookstore.Services
                 var entity =
                 ctx
                 .Book
-                .Single(e => e.BookId == bookId && e.OwnerId == _userId);
+                .Single(e => e.BookId == bookId /*&& e.OwnerId == _userId*/);
                 return
                     new BookDetail
                     {
