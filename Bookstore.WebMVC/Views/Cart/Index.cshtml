@@ -35,7 +35,7 @@
             @Html.DisplayNameFor(model => model.CartItems.First<Bookstore.Models.UserCartListItem>().ItemTotal)
         </th>
         <th></th>
-        <th>Cart Total</th>
+        
     </tr>
 
     @foreach (var item in Model.CartItems)
@@ -63,9 +63,9 @@
         <tr>
             <td></td>
             <td></td>
-            <td></td>
+            <td><b>Cart Total:</b></td>
             <td>
-                @Html.DisplayFor(model => model.CartTotal)
+               @Html.DisplayFor(model => model.CartTotal)
             </td>
         </tr>
 
