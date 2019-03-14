@@ -44,7 +44,6 @@ h4 {
     font-size: 1.5em;
     text-align: center;
     text-shadow: 1px 1px 4px black;
-   
 }
 
 p {
@@ -62,10 +61,9 @@ p {
 .sidebar {
     margin: 0;
     padding: 0;
-    width: 100px;
+    float: left;
     background-color: #c7bbc9;
     position: absolute;
-    height: 50%;
     overflow: auto;
 }
 
