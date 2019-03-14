@@ -39,21 +39,22 @@ namespace Bookstore.Services
 
 
         public IEnumerable<UserCartListItem> GetUserBooks()
+
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
                     .Cart
-                    .Where(e => e.OwnerId == _userId)
+                   .Where(e => e.OwnerId == _userId)
                     .Select(
                         e =>
+
                         new Models.UserCartListItem
                         {
                             CartId = e.CartId,
                             OwnerId = e.OwnerId,
                             BookId = e.BookId,
-                            Title = e.Book.Title,
                             Quantity = e.Quantity,
                             Price = e.Price,
                             ItemTotal = e.ItemTotal,
@@ -136,44 +137,6 @@ namespace Bookstore.Services
             }
         }
 
-        // public ActionResult AddToCart(int bookId)
-        //{
-        //    CartCreate cartCreate = new CartCreate();
-
-        //    var svc = CreateCartService();
-
-        //    svc.AddToCart(bookId);
-        //    if (Session["cart"] == null)
-        //    {
-        //        List<UserCartListItem> cart = new List<UserCartListItem>();
-        //        cart.Add(new UserCartListItem { CartId = cartCreate.BookId, Quantity = 1 });
-        //        Session["cart"] = cart;
-        //    }
-        //    else
-        //    {
-        //        List<UserCartListItem> cart = (List<UserCartListItem>)Session["cart"];
-        //        int index = isExist(bookId);
-        //        if (index != -1)
-        //        {
-        //            cart[index].Quantity++;
-        //        }
-        //        else
-        //        {
-        //            cart.Add(new UserCartListItem { CartId = cartCreate.BookId, Quantity = 1 });
-        //        }
-        //        Session["cart"] = cart;
-        //    }
-        //    return RedirectToAction("Cart");
-        //}
-        //private int isExist(int bookId)
-        //{
-        //    List<UserCartListItem> cart = (List<UserCartListItem>)Session["cart"];
-        //    for (int i = 0; i < cart.Count; i++)
-        //        if (cart[i].CartId.Equals(bookId))
-        //            return i;
-        //    return -1;
-        //}
-
         public bool AddToCart(BookDetail book)
         {
             CartCreate cartCreate = new CartCreate()
@@ -189,5 +152,5 @@ namespace Bookstore.Services
         }
     }
 }
- 
+
 

@@ -132,7 +132,7 @@ namespace Bookstore.WebMVC.Controllers
             var book = bookSvc.GetBookById(bookId);
             svc.AddToCart(book);
             
-            return RedirectToAction("Cart");
+            return RedirectToAction("Index");
         }
 
         private BookService CreateBookService()

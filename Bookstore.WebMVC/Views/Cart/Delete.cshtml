@@ -6,41 +6,18 @@
 
 <h2>Delete</h2>
 
-<h2>Are you sure you want to delete this?</h2>
+<h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>Cart Detail</h4>
     <hr />
     <dl class="dl-horizontal">
+       
         <dt>
-            @Html.DisplayNameFor(model => model.CartId)
+            @Html.DisplayNameFor(model => model.Book.Title)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CartId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.OwnerId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.OwnerId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BookId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BookId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Title)
+            @Html.DisplayFor(model => model.Book.Title)
         </dd>
 
         <dt>
@@ -68,9 +45,10 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        @Html.ActionLink("Back to List", "Index") |
+        @Html.ActionLink("Continue Shopping", "Index", "Home")
+    </div>
     }
 </div>

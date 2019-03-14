@@ -7,39 +7,16 @@
 <h2>Cart Details</h2>
 
 <div>
-    <h4>Cart Detail</h4>
+    
     <hr />
     <dl class="dl-horizontal">
+        
         <dt>
-            @Html.DisplayNameFor(model => model.CartId)
+            @Html.DisplayNameFor(model => model.Book.Title)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CartId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.OwnerId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.OwnerId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BookId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BookId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Title)
+            @Html.DisplayFor(model => model.Book.Title)
         </dd>
 
         <dt>
@@ -63,6 +40,7 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new {id = Model.CartId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CartId }) |
+    @Html.ActionLink("Back to List", "Index") |
+    @Html.ActionLink("Continue Shopping", "Index", "Home")
 </p>

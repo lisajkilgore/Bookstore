@@ -11,71 +11,136 @@
     <link rel="stylesheet" type="text/css" href="~/Content/Site.css">
 </head>
 <body>
-   
-        <div>
-            <h1>The Bibliotaph's Sanctum</h1>
-        </div>
 
+    <div class="home" id="home">
+        <h1>The Bibliotaph's Sanctum</h1>
+    </div>
+
+    <div class="sidebar">
+        <h4>Browse Books By Category</h4>
+        <a class="active" href="#home">Home</a>
+        <a href="#bestsellers">Best Sellers</a>
+        <a href="#newreleases">New Releases</a>
+        <a href="#youngadult">Teen & Young Adult</a>
+        <a href="#children">Children's</a>
+    </div>
+
+    <div class="bestsellers" id="bestsellers">
         <h2>Best Sellers</h2>
+    </div>
 
-        <div class="row">
-            <div class="col-sm-3">
-                <img src="~/Content/Assets/BestSellers/Becoming_MichelleObama.jpg" />
-               @Html.ActionLink("Add to Cart", "AddToCart", "Cart", new { bookId = 1 }, htmlAttributes: new { @class = "btn btn-secondary btn-lg active" })
-                <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
-            </div>
-
-            <div class="col-sm-3">
-                <img src="~/Content/Assets/BestSellers/WhereTheCrawdadsSing_DeliaOwens.jpg" />
-                <a class="btn btn-primary" href="~/Cart" role="button">Add to Cart</a>
-                <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
-            </div>
-
-            <div class="col-sm-3">
-                <img src="~/Content/Assets/BestSellers/TheHateUGive_AngieThomas.jpg" />
-                <a class="btn btn-primary" href="~/Cart" role="button">Add to Cart</a>
-                <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
-            </div>
-
-            <div class="col-sm-3">
-                <img src="~/Content/Assets/BestSellers/Educated_TaraWestover.jpg" />
-                <a class="btn btn-primary" href="~/Cart" role="button">Add to Cart</a>
-                <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
-            </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <img src="~/Content/Assets/BestSellers/Becoming_MichelleObama.jpg" />
+            @Html.ActionLink("Add to Cart", "AddToCart", "Cart", new { bookId = 1 }, htmlAttributes: new { @class = "btn btn-secondary btn-lg active" })
+            <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
         </div>
 
-        <div>
-            <h2>New Releases</h2>
+        <div class="col-sm-3">
+            <img src="~/Content/Assets/BestSellers/WhereTheCrawdadsSing_DeliaOwens.jpg" />
+            @Html.ActionLink("Add to Cart", "AddToCart", "Cart", new { bookId = 2 }, htmlAttributes: new { @class = "btn btn-secondary btn-lg active" })
+            <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
         </div>
 
-        <div class="row">
-
-            <div class="col-sm-3">
-                <img src="~/Content/Assets/NewRelease/EightDates_Gottman.jpg" />
-                <a class="btn btn-primary" href="~/Cart" role="button">Add to Cart</a>
-                <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
-            </div>
-
-            <div class="col-sm-3">
-                <img src="~/Content/Assets/NewRelease/GirlWashYourace_RachelHollis.jpg" />
-                <a class="btn btn-primary" href="~/Cart" role="button">Add to Cart</a>
-                <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
-            </div>
-
-            <div class="col-sm-3">
-                <img src="~/Content/Assets/NewRelease/TheLastRomantics_TaraConklin.jpg" />
-                <a class="btn btn-primary" href="~/Cart" role="button">Add to Cart</a>
-                <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
-            </div>
-
-            <div class="col-sm-3">
-                <img src="~/Content/Assets/NewRelease/TheIslandOSeaWomen_LisaSee.jpg" />
-                <a class="btn btn-primary" href="~/Cart" role="button">Add to Cart</a>
-                <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
-            </div>
+        <div class="col-sm-3">
+            <img src="~/Content/Assets/BestSellers/TheHateUGive_AngieThomas.jpg" />
+            @Html.ActionLink("Add to Cart", "AddToCart", "Cart", new { bookId = 4 }, htmlAttributes: new { @class = "btn btn-secondary btn-lg active" })
+            <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
         </div>
 
-       
+        <div class="col-sm-3">
+            <img src="~/Content/Assets/BestSellers/Educated_TaraWestover.jpg" />
+            @Html.ActionLink("Add to Cart", "AddToCart", "Cart", new { bookId = 3 }, htmlAttributes: new { @class = "btn btn-secondary btn-lg active" })
+            <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
+        </div>
+    </div>
+
+
+    <div class="newreleases" id="newreleases">
+        <h2>New Releases</h2>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-3">
+            <img src="~/Content/Assets/NewRelease/EightDates_Gottman.jpg" />
+            @Html.ActionLink("Add to Cart", "AddToCart", "Cart", new { bookId = 5 }, htmlAttributes: new { @class = "btn btn-secondary btn-lg active" })
+            <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
+        </div>
+
+        <div class="col-sm-3">
+            <img src="~/Content/Assets/NewRelease/GirlWashYourace_RachelHollis.jpg" />
+            @Html.ActionLink("Add to Cart", "AddToCart", "Cart", new { bookId = 6 }, htmlAttributes: new { @class = "btn btn-secondary btn-lg active" })
+            <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
+        </div>
+
+        <div class="col-sm-3">
+            <img src="~/Content/Assets/NewRelease/TheLastRomantics_TaraConklin.jpg" />
+            @Html.ActionLink("Add to Cart", "AddToCart", "Cart", new { bookId = 7 }, htmlAttributes: new { @class = "btn btn-secondary btn-lg active" })
+            <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
+        </div>
+
+        <div class="col-sm-3">
+            <img src="~/Content/Assets/NewRelease/TheIslandOSeaWomen_LisaSee.jpg" />
+            @Html.ActionLink("Add to Cart", "AddToCart", "Cart", new { bookId = 8 }, htmlAttributes: new { @class = "btn btn-secondary btn-lg active" })
+            <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
+        </div>
+    </div>
+
+
+    <div class="youngadult" id="youngadult">
+        <h2>Teen & Young Adult</h2>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-3">
+            <img src="~/Content/Assets/YoungAdult/TurtlesAllTheWayDown.jpg" />
+            @Html.ActionLink("Add to Cart", "AddToCart", "Cart", new { bookId = 10 }, htmlAttributes: new { @class = "btn btn-secondary btn-lg active" })
+            <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
+        </div>
+
+        <div class="col-sm-3">
+            <img src="~/Content/Assets/YoungAdult/TheSunIsAlsoAStar_NicolaYoon.jpg" />
+            @Html.ActionLink("Add to Cart", "AddToCart", "Cart", new { bookId = 12 }, htmlAttributes: new { @class = "btn btn-secondary btn-lg active" })
+            <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
+        </div>
+
+        <div class="col-sm-3">
+            <img src="~/Content/Assets/YoungAdult/Speak_LaurieHalseAnderson.jpg" />
+            @Html.ActionLink("Add to Cart", "AddToCart", "Cart", new { bookId = 13 }, htmlAttributes: new { @class = "btn btn-secondary btn-lg active" })
+            <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
+        </div>
+
+        <div class="col-sm-3">
+            <img src="~/Content/Assets/YoungAdult/DearEvanHansen.jpg" />
+            @Html.ActionLink("Add to Cart", "AddToCart", "Cart", new { bookId = 8 }, htmlAttributes: new { @class = "btn btn-secondary btn-lg active" })
+            <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
+        </div>
+    </div>
+
+
+    <div class="children" id="children">
+        <h2>Children's</h2>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-5">
+            <img src="~/Content/Assets/Children/YouAreMyHappy_HodaKotb.jpg" />
+            @Html.ActionLink("Add to Cart", "AddToCart", "Cart", new { bookId = 11 }, htmlAttributes: new { @class = "btn btn-secondary btn-lg active" })
+            <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
+        </div>
+
+        <div class="col-sm-5">
+            <img src="~/Content/Assets/Children/TheWonkyDonkey.jpg" />
+            @Html.ActionLink("Add to Cart", "AddToCart", "Cart", new { bookId = 16 }, htmlAttributes: new { @class = "btn btn-secondary btn-lg active" })
+            <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
+        </div>
+
+
+
+    </div>
 
 </body>
 </html>
