@@ -21,7 +21,7 @@ namespace Bookstore.Models
         [DisplayName("Item Total")]
         public decimal ItemTotal { get; set; }
        
-
+        public virtual Book Book { get; set; }
     }
 }
 
