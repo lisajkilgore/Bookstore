@@ -21,7 +21,7 @@
 <table class="table">
     <tr>
         <th>
-           @Html.DisplayNameFor(model => model.CartItems.First<Bookstore.Models.UserCartListItem>().Book.Title)
+           @Html.DisplayNameFor(model => model.CartItems.First<Bookstore.Models.UserCartListItem>().Title)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CartItems.First<Bookstore.Models.UserCartListItem>().Quantity)
@@ -40,7 +40,7 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Book.Title)
+                @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Quantity)

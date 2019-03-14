@@ -50,15 +50,15 @@ namespace Bookstore.Services
                     .Select(
                         e =>
 
-                        new Models.UserCartListItem
+                        new UserCartListItem
                         {
                             CartId = e.CartId,
                             OwnerId = e.OwnerId,
                             BookId = e.BookId,
+                            Title = e.Book.Title,
                             Quantity = e.Quantity,
                             Price = e.Price,
                             ItemTotal = e.ItemTotal,
-
                         }
                         );
                 return query.ToArray();

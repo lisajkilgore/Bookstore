@@ -63,7 +63,7 @@ p {
     padding: 0;
     float: left;
     background-color: #c7bbc9;
-    position: absolute;
+    float: left;
     overflow: auto;
 }
 

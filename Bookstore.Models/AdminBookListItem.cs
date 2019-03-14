@@ -37,6 +37,7 @@ namespace Bookstore.Models
 
         public int Quantity { get; set; }
 
-
+        //private string FixEnumDisplay()
+        
     }
 }
