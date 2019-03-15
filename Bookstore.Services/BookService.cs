@@ -69,11 +69,15 @@ namespace Bookstore.Services
                         Quantity = e.Quantity,
 
                     }
-
+                   
 
                     );
-
-                return query.ToArray();
+                var array = query.ToArray();
+                foreach(var book in array)
+                {
+                    book.BookTypeString = Helper.GetDisplayName(book.TypeOfBook);
+                }
+                return array;
             }
         }
 
@@ -139,19 +143,21 @@ namespace Bookstore.Services
             }
         }
 
-
-        //public static string GetEnumDisplayName(this Enum BookType)
-        //{
-        //    return BookType
-        //        .GetType()
-        //        .GetMember(BookType.ToString())
-        //        .First()
-        //        .GetCustomAttribute<DisplayAttribute>()
-        //        .GetName();
-
     }
-}
+        static class Helper
+        {
+            public static string GetDisplayName(this Enum bookType)
+            {
 
+                return bookType
+                    .GetType()
+                    .GetMember(bookType.ToString())
+                    .First()
+                    .GetCustomAttribute<DisplayAttribute>()
+                    .GetName();
+            }
+        }
+} 
 
 
 

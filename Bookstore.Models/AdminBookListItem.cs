@@ -31,13 +31,13 @@ namespace Bookstore.Models
         public bool IsNewRelease { get; set; }
 
         [DisplayName("Best Seller")]
-        public bool IsBestSeller { get; set; }
+        public bool IsBestSeller { get; set; } 
 
         public decimal Price { get; set; }
 
         public int Quantity { get; set; }
 
-        //private string FixEnumDisplay()
-        
+        public string BookTypeString { get; set; }
+
     }
 }

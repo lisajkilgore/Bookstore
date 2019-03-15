@@ -59,8 +59,8 @@ p {
 
 /* The side navigation menu */
 .sidebar {
-    margin: 20px 0px 0px -100px;
-    padding: 20px 0px 0px -100px;
+    margin: 0px 0px 0px -200px;
+    padding: 0px 0px 0px -200px;
     float: left;
     background-color: #c7bbc9;
 }
@@ -120,14 +120,7 @@ body {
     padding-bottom: 5px;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-top: 50px;
-    padding-bottom: 5px;
-    background-color: #dce7ea;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
+
 
 
 /* Override the default bootstrap behavior where horizontal description lists 
