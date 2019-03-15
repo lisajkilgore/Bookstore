@@ -60,7 +60,7 @@ namespace Bookstore.WebMVC.Controllers
         {
             var service = CreateCartService();
             var detail = service.GetCartById(id);
-            var model =
+           var model = 
                 new CartEdit
                 {
                     CartId = detail.CartId,
