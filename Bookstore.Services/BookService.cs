@@ -69,11 +69,11 @@ namespace Bookstore.Services
                         Quantity = e.Quantity,
 
                     }
-                   
+
 
                     );
                 var array = query.ToArray();
-                foreach(var book in array)
+                foreach (var book in array)
                 {
                     book.BookTypeString = Helper.GetDisplayName(book.TypeOfBook);
                 }
@@ -89,8 +89,8 @@ namespace Bookstore.Services
                 ctx
                 .Book
                 .Single(e => e.BookId == bookId /*&& e.OwnerId == _userId*/);
-                return
-                    new BookDetail
+                
+                    return new BookDetail
                     {
                         BookId = entity.BookId,
                         TypeOfBook = entity.TypeOfBook,
@@ -100,13 +100,16 @@ namespace Bookstore.Services
                         IsNewRelease = entity.IsNewRelease,
                         IsBestSeller = entity.IsBestSeller,
                         Price = entity.Price,
-                        Quantity = entity.Quantity
+                        Quantity = entity.Quantity,
+                        BookTypeAsString = Helper.GetDisplayName(entity.TypeOfBook)
+
                     };
             }
-
         }
 
-        public bool UpdateBook(BookEdit model)
+
+
+                public bool UpdateBook(BookEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -144,20 +147,22 @@ namespace Bookstore.Services
         }
 
     }
-        static class Helper
+    static class Helper
+    {
+        public static string GetDisplayName(this Enum bookType)
         {
-            public static string GetDisplayName(this Enum bookType)
-            {
-
+            if (bookType.ToString().Contains('_'))
                 return bookType
                     .GetType()
                     .GetMember(bookType.ToString())
                     .First()
                     .GetCustomAttribute<DisplayAttribute>()
                     .GetName();
-            }
+            else
+                return bookType.ToString();
         }
-} 
+    }
+}
 
 
 
