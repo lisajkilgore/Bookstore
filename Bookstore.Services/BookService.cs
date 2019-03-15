@@ -2,7 +2,9 @@
 using Bookstore.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -65,7 +67,7 @@ namespace Bookstore.Services
                         IsBestSeller = e.IsBestSeller,
                         Price = e.Price,
                         Quantity = e.Quantity,
-                        
+
                     }
 
 
@@ -118,7 +120,7 @@ namespace Bookstore.Services
                 entity.Price = model.Price;
                 entity.Quantity = model.Quantity;
 
-                    return ctx.SaveChanges() == 1;
+                return ctx.SaveChanges() == 1;
             }
         }
 
@@ -136,7 +138,22 @@ namespace Bookstore.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+
+        //public static string GetEnumDisplayName(this Enum BookType)
+        //{
+        //    return BookType
+        //        .GetType()
+        //        .GetMember(BookType.ToString())
+        //        .First()
+        //        .GetCustomAttribute<DisplayAttribute>()
+        //        .GetName();
+
     }
 }
+
+
+
+
 
 

@@ -59,12 +59,10 @@ p {
 
 /* The side navigation menu */
 .sidebar {
-    margin: 0;
-    padding: 0;
+    margin: 20px 0px 0px -100px;
+    padding: 20px 0px 0px -100px;
     float: left;
     background-color: #c7bbc9;
-    float: left;
-    overflow: auto;
 }
 
     /* Sidebar links */
@@ -87,12 +85,7 @@ p {
             color: white;
         }
 
-/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-div.content {
-    margin-left: 200px;
-    padding: 1px 16px;
-    height: 1000px;
-}
+
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
 @media screen and (max-width: 700px) {
@@ -152,7 +145,7 @@ textarea {
 }
 
 footer {
-    background-color: #708090;
+    background-color: transparent;
     font-size: 1em;
     padding: 20px 20px 20px 0px;
     width: 100%;

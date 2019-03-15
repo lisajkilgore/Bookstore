@@ -12,18 +12,18 @@
 </head>
 <body>
 
-    <div class="home" id="home">
-        <h1>The Bibliotaph's Sanctum</h1>
-    </div>
-
     <div class="sidebar">
         <h4>Browse Books By Category</h4>
-        <a class="active" href="#home">Home</a>
         <a href="#bestsellers">Best Sellers</a>
         <a href="#newreleases">New Releases</a>
         <a href="#youngadult">Teen & Young Adult</a>
         <a href="#children">Children's</a>
     </div>
+
+    <div class="home" id="home">
+        <h1>The Bibliotaph's Sanctum</h1>
+    </div>
+
 
     <div class="bestsellers" id="bestsellers">
         <h2>Best Sellers</h2>
@@ -33,7 +33,7 @@
         <div class="col-sm-3">
             <img src="~/Content/Assets/BestSellers/Becoming_MichelleObama.jpg" />
             @Html.ActionLink("Add to Cart", "AddToCart", "Cart", new { bookId = 1 }, htmlAttributes: new { @class = "btn btn-secondary btn-lg active" })
-            <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
+            <a href="~/Book/Details/1" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Details</a>
         </div>
 
         <div class="col-sm-3">

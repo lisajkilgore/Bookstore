@@ -3,7 +3,9 @@ using Bookstore.Services;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 
@@ -13,7 +15,7 @@ namespace Bookstore.WebMVC.Controllers
     public class BookController : Controller
     {
         // GET: Book
-        
+
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -129,8 +131,11 @@ namespace Bookstore.WebMVC.Controllers
             return RedirectToAction("Index");
         }
 
-    
+
     }
 
+
 }
+
+
 
