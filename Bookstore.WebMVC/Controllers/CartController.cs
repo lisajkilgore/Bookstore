@@ -121,7 +121,7 @@ namespace Bookstore.WebMVC.Controllers
 
             service.DeleteCart(id);
 
-            TempData["SaveResult"] = "Your cart was deleted.";
+            TempData["SaveResult"] = "The book was removed from your cart.";
 
             return RedirectToAction("Index");
         }

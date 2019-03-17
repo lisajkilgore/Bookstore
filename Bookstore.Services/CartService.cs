@@ -123,9 +123,10 @@ namespace Bookstore.Services
 
                 model.ItemTotal = model.Price * Convert.ToDecimal(model.Quantity);
                 return ctx.SaveChanges() == 1;
-
             }
         }
+        
+        
 
         public bool DeleteCart(int cartId)
         {
