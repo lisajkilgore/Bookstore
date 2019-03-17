@@ -95,6 +95,7 @@ namespace Bookstore.Services
                         CartId = entity.CartId,
                         OwnerId = entity.OwnerId,
                         BookId = entity.BookId,
+                        Title = entity.Book.Title,
                         Quantity = entity.Quantity,
                         Price = entity.Price,
                         ItemTotal = entity.ItemTotal,
@@ -114,6 +115,7 @@ namespace Bookstore.Services
                 entity.CartId = model.CartId;
                 entity.OwnerId = model.OwnerId;
                 entity.BookId = model.BookId;
+                entity.Book.Title = model.Title;
                 entity.Quantity = model.Quantity;
                 entity.Price = model.Price;
                 entity.ItemTotal = model.ItemTotal;
@@ -142,6 +144,7 @@ namespace Bookstore.Services
             CartCreate cartCreate = new CartCreate()
             {
                 BookId = book.BookId,
+                Title = book.Title,
                 Price = book.Price,
                 Quantity = 1,
                 ItemTotal = 1,

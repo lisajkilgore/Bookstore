@@ -66,7 +66,7 @@ namespace Bookstore.WebMVC.Controllers
                     CartId = detail.CartId,
                     OwnerId = detail.OwnerId,
                     BookId = detail.BookId,
-                    Title = detail.Book.Title,
+                    Title = detail.Title,
                     Quantity = detail.Quantity,
                     Price = detail.Price,
                     ItemTotal = detail.ItemTotal,
