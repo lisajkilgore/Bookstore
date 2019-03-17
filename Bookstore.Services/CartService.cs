@@ -118,9 +118,12 @@ namespace Bookstore.Services
                 entity.Book.Title = model.Title;
                 entity.Quantity = model.Quantity;
                 entity.Price = model.Price;
-                entity.ItemTotal = model.ItemTotal;
 
+
+
+                model.ItemTotal = model.Price * Convert.ToDecimal(model.Quantity);
                 return ctx.SaveChanges() == 1;
+
             }
         }
 
