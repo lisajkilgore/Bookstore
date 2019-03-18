@@ -20,6 +20,7 @@ namespace Bookstore.WebMVC
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             StripeConfiguration.SetApiKey(ConfigurationManager.AppSettings["sk_test_n9ph6eUYkYPByT2ua06v6Bdv"]);
+            StripeConfiguration.SetApiKey(ConfigurationManager.AppSettings["pk_test_xyxrTGDcuvs2YlTTIu9Ak5M1"]);
         }
     }
 }

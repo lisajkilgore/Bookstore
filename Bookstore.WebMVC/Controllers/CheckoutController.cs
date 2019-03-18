@@ -11,10 +11,11 @@ namespace Bookstore.WebMVC.Controllers
 {
     public class CheckoutController : Controller
     {
+
         // GET: Product
         public ActionResult Index()
         {
-            string stripePublishableKey = ConfigurationManager.AppSettings["stripePublishableKey"];
+            string stripePublishableKey = ConfigurationManager.AppSettings["pk_test_xyxrTGDcuvs2YlTTIu9Ak5M1"];
             var model = new ProductModel() { StripePublishableKey = stripePublishableKey };
             return View(model);
         }
@@ -28,7 +29,7 @@ namespace Bookstore.WebMVC.Controllers
 
         public ActionResult Custom()
         {
-            string stripePublishableKey = ConfigurationManager.AppSettings["stripePublishableKey"];
+            string stripePublishableKey = ConfigurationManager.AppSettings["pk_test_xyxrTGDcuvs2YlTTIu9Ak5M1"];
             var model = new ChargeModel() { StripePublishableKey = stripePublishableKey, PaymentFormHidden = true };
             return View(model);
         }

@@ -21,7 +21,7 @@
 <table class="table">
     <tr>
         <th>
-           @Html.DisplayNameFor(model => model.CartItems.First<Bookstore.Models.UserCartListItem>().Title)
+            @Html.DisplayNameFor(model => model.CartItems.First<Bookstore.Models.UserCartListItem>().Title)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CartItems.First<Bookstore.Models.UserCartListItem>().Quantity)
@@ -33,7 +33,7 @@
             @Html.DisplayNameFor(model => model.CartItems.First<Bookstore.Models.UserCartListItem>().ItemTotal)
         </th>
         <th></th>
-        
+
     </tr>
 
     @foreach (var item in Model.CartItems)
@@ -59,14 +59,14 @@
             </td>
         </tr>
     }
-        <tr>
-            <td></td>
-            <td></td>
-            <td><b>Cart Total:</b></td>
-            <td>
-               @Html.DisplayFor(model => model.CartTotal)
-            </td>
-        </tr>
-
-
+    <tr>
+        <td></td>
+        <td></td>
+        <td><b>Cart Total:</b></td>
+        <td>
+            @Html.DisplayFor(model => model.CartTotal)
+        </td>
+    </tr>
 </table>
+
+<a href="~/Checkout/Index" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Proceed to Checkout</a>
