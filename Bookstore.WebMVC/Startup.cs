@@ -13,6 +13,7 @@ namespace Bookstore.WebMVC
         {
             ConfigureAuth(app);
             CreateRolesandUsers();
+
         }
 
         private void CreateRolesandUsers()
@@ -49,6 +50,7 @@ namespace Bookstore.WebMVC
                 roleManager.Create(role);
 
             }
+
         }
     }
 }

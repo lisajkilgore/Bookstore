@@ -62,6 +62,8 @@
     <Compile Include="CartDetail.cs" />
     <Compile Include="CartEdit.cs" />
     <Compile Include="CartTotalModel.cs" />
+    <Compile Include="ChargeModel.cs" />
+    <Compile Include="ProductModel.cs" />
     <Compile Include="UserCartListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
