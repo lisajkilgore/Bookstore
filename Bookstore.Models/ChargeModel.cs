@@ -8,7 +8,7 @@ namespace Bookstore.Models
 {
     public class ChargeModel
     {
-        public string StripeToken { get; set; }
+        public string Token { get; set; }
         public string StripeEmail { get; set; }
         public string StripePublishableKey { get; set; }
         public bool PaymentFormHidden { get; set; }

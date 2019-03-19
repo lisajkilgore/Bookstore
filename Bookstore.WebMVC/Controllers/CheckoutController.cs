@@ -45,14 +45,16 @@ namespace Bookstore.WebMVC.Controllers
 
             // Token is created using Checkout or Elements!
             // Get the payment token submitted by the form:
-            var token = chargeModel.StripeToken; // Using ASP.NET MVC
+            var token = chargeModel.Token; // Using ASP.NET MVC
 
             var options = new ChargeCreateOptions
             {
-                Amount = 999,
+                Amount = 1999,
                 Currency = "usd",
                 Description = "Example charge",
                 SourceId = token,
+                Capture = false,
+                ReceiptEmail = "lisajkilgore@hotmail.com",
             };
             var service = new ChargeService();
             Charge charge = service.Create(options);
@@ -64,6 +66,7 @@ namespace Bookstore.WebMVC.Controllers
         // GET: Confirmation
         public ActionResult Confirmation()
         {
+            //TODO: Add UpdateInventory() and ClearCart() here
             return View();
         }
 
