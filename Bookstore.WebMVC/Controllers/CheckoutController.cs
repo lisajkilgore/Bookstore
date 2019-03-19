@@ -39,30 +39,27 @@ namespace Bookstore.WebMVC.Controllers
         public ActionResult Custom(ChargeModel chargeModel)
 
         {
+            // Set your secret key: remember to change this to your live secret key in production
+            // See your keys here: https://dashboard.stripe.com/account/apikeys
+            StripeConfiguration.SetApiKey("sk_test_n9ph6eUYkYPByT2ua06v6Bdv");
 
-            var chargeOptions = new ChargeCreateOptions()
+            // Token is created using Checkout or Elements!
+            // Get the payment token submitted by the form:
+            var token = chargeModel.StripeToken; // Using ASP.NET MVC
+
+            var options = new ChargeCreateOptions
             {
-                Amount = 1999,
+                Amount = 999,
                 Currency = "usd",
-                ReceiptEmail = chargeModel.StripeEmail,
-                SourceId = chargeModel.StripeToken,
+                Description = "Example charge",
+                SourceId = token,
             };
-
-            var chargeService = new ChargeService();
-
-            try
-            {
-                var stripeCharge = chargeService.Create(chargeOptions);
-            }
-            catch (StripeException stripeException)
-            {
-                ModelState.AddModelError(string.Empty, stripeException.Message);
-                return View(chargeModel);
-            }
+            var service = new ChargeService();
+            Charge charge = service.Create(options);
 
             return RedirectToAction("Confirmation");
-
         }
+        
 
         // GET: Confirmation
         public ActionResult Confirmation()

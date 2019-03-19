@@ -5,16 +5,19 @@
 
 <h2>Checkout</h2>
 
-<form action="/Payment/Charge" method="POST">
-    <article>
-        <label>Amount:</label>
-    </article>
-    <script src="//checkout.stripe.com/v2/checkout.js"
-            class="stripe-button"
-            data-key="@ViewBag.pk_test_xyxrTGDcuvs2YlTTIu9Ak5M1"
-            data-locale="auto"
-            data-description=""
-            data-amount="">
-    </script>
-</form>
+
+ <form action="Confirmation" method="POST">
+     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+             data-key="pk_test_xyxrTGDcuvs2YlTTIu9Ak5M1"
+             data-amount="{{amount}}"
+             data-name="The Bibliotaph's Sanctum"
+             data-description="Enter Credit Card"
+             data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+             data-locale="auto"
+             data-billing-address
+             data-shipping-address>
+
+      
+     </script>
+ </form>
 
