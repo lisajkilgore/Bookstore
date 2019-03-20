@@ -1,6 +1,7 @@
 ﻿.navbar.navbar-inverse.navbar-fixed-top {
     background-color: #708090;
     font-size: 1.4em;
+    color: yellow;
 }
 
 .navbar-header {
@@ -146,4 +147,11 @@ footer {
     font-size: 1em;
     padding: 20px 20px 20px 0px;
     width: 100%;
+}
+
+contact-bg-img {
+    background-image: url("Assets/books-right-side.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat no-repeat;
 }
