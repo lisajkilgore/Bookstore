@@ -70,8 +70,8 @@ namespace Bookstore.WebMVC.Controllers
                     IsNewRelease = detail.IsNewRelease,
                     IsBestSeller = detail.IsBestSeller,
                     Price = detail.Price,
-                    Quantity = detail.Quantity
-
+                    Inventory = detail.Inventory,
+                    Description = detail.Description,
                 };
             return View(model);
         }

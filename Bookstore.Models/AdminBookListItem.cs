@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Bookstore.Data;
+using Bookstore.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Bookstore.Data;
-using Bookstore.Models;
 
 namespace Bookstore.Models
 {
@@ -31,13 +31,15 @@ namespace Bookstore.Models
         public bool IsNewRelease { get; set; }
 
         [DisplayName("Best Seller")]
-        public bool IsBestSeller { get; set; } 
+        public bool IsBestSeller { get; set; }
 
         public decimal Price { get; set; }
 
-        public int Quantity { get; set; }
+        public int Inventory { get; set; }
 
         public string BookTypeString { get; set; }
+
+        public string Description { get; set; }
 
     }
 }

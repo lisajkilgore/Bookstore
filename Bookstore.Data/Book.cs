@@ -42,7 +42,10 @@ namespace Bookstore.Data
         public decimal Price { get; set; }
 
         [Required]
-        public int Quantity { get; set; }
+        public int Inventory { get; set; }
+
+        [Required]
+        public string Description { get; set; }
     }
 }
 

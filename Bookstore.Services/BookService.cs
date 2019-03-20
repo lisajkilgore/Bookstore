@@ -35,7 +35,8 @@ namespace Bookstore.Services
                     IsNewRelease = model.IsNewRelease,
                     IsBestSeller = model.IsBestSeller,
                     Price = model.Price,
-                    Quantity = model.Quantity,
+                    Inventory = model.Inventory,
+                    Description = model.Description,
 
                 };
             using (var ctx = new ApplicationDbContext())
@@ -66,8 +67,8 @@ namespace Bookstore.Services
                         IsNewRelease = e.IsNewRelease,
                         IsBestSeller = e.IsBestSeller,
                         Price = e.Price,
-                        Quantity = e.Quantity,
-
+                        Inventory = e.Inventory,
+                        Description = e.Description,
                     }
 
 
@@ -100,9 +101,9 @@ namespace Bookstore.Services
                         IsNewRelease = entity.IsNewRelease,
                         IsBestSeller = entity.IsBestSeller,
                         Price = entity.Price,
-                        Quantity = entity.Quantity,
-                        BookTypeAsString = Helper.GetDisplayName(entity.TypeOfBook)
-
+                        Inventory = entity.Inventory,
+                        BookTypeAsString = Helper.GetDisplayName(entity.TypeOfBook),
+                        Description = entity.Description,
                     };
             }
         }
@@ -125,7 +126,8 @@ namespace Bookstore.Services
                 entity.IsNewRelease = model.IsNewRelease;
                 entity.IsBestSeller = model.IsBestSeller;
                 entity.Price = model.Price;
-                entity.Quantity = model.Quantity;
+                entity.Inventory = model.Inventory;
+                entity.Description = model.Description;
 
                 return ctx.SaveChanges() == 1;
             }

@@ -34,8 +34,10 @@ namespace Bookstore.Models
 
         public decimal Price { get; set; }
 
-        public int Quantity { get; set; }
+        public int Inventory { get; set; }
 
-                
+        public string Description { get; set; }
+
+
     }
 }

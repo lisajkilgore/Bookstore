@@ -26,7 +26,7 @@
         <th>
 
             @Html.DisplayNameFor(model => model.TypeOfBook)
-            
+
         </th>
         <th>
             @Html.DisplayNameFor(model => model.BookId)
@@ -44,7 +44,7 @@
             @Html.DisplayNameFor(model => model.Price)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Quantity)
+            @Html.DisplayNameFor(model => model.Inventory)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Title)
@@ -52,45 +52,51 @@
         <th>
             @Html.DisplayNameFor(model => model.Author)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.BookTypeString)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BookId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsFiction)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsNewRelease)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsBestSeller)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Author)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.BookId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.BookId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.BookId })
-            </td>
-        </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookTypeString)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsFiction)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsNewRelease)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsBestSeller)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Inventory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.BookId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.BookId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.BookId })
+        </td>
+    </tr>
     }
 
 </table>
