@@ -9,7 +9,7 @@
 <h2>Book Database</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", "Create", htmlAttributes: new { @class = "btn btn-info" })
 </p>
 @if (TempData.ContainsKey("SaveResult"))
 {
@@ -60,43 +60,45 @@
 
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.BookTypeString)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BookId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsFiction)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsNewRelease)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsBestSeller)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Inventory)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Author)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.BookId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.BookId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.BookId })
-        </td>
-    </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookTypeString)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsFiction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsNewRelease)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsBestSeller)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Inventory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.BookId }, htmlAttributes: new { @class = "btn btn-info" })
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.BookId }, htmlAttributes: new { @class = "btn btn-info" })
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.BookId }, htmlAttributes: new { @class = "btn btn-info" })
+            <td></td>
+        </tr>
     }
 
 </table>

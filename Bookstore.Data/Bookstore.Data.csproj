@@ -85,6 +85,10 @@
     <Compile Include="Migrations\201903200027317_properties.Designer.cs">
       <DependentUpon>201903200027317_properties.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903200326025_enum.cs" />
+    <Compile Include="Migrations\201903200326025_enum.Designer.cs">
+      <DependentUpon>201903200326025_enum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -113,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903200027317_properties.resx">
       <DependentUpon>201903200027317_properties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903200326025_enum.resx">
+      <DependentUpon>201903200326025_enum.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

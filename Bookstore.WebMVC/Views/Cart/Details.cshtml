@@ -40,7 +40,7 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CartId }) |
-    @Html.ActionLink("Back to List", "Index") |
-    @Html.ActionLink("Continue Shopping", "Index", "Home")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CartId }, htmlAttributes: new { @class = "btn btn-info" })
+    @Html.ActionLink("Back to List", "Index", "Cart" , htmlAttributes: new { @class = "btn btn-info" })
+    @Html.ActionLink("Continue Shopping", "Index", "Home",  htmlAttributes: new { @class = "btn btn-info" })
 </p>
