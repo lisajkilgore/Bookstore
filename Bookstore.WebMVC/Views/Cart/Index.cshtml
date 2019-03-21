@@ -5,90 +5,109 @@
 }
 
 <h2>Shopping Cart</h2>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Italianno|Special+Elite" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/Content/Site.css">
+</head>
+<body class="cart-bg-img">
+    @if (TempData.ContainsKey("SaveResult"))
+    {<div class="alert alert-success fade in" role="alert">
 
-
-
-@if (TempData.ContainsKey("SaveResult"))
-{
-    <div class="alert alert-success fade in" role="alert">
-
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-        @TempData["SaveResult"]
-    </div>
-}
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CartItems.First<Bookstore.Models.UserCartListItem>().Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CartItems.First<Bookstore.Models.UserCartListItem>().Quantity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CartItems.First<Bookstore.Models.UserCartListItem>().Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CartItems.First<Bookstore.Models.UserCartListItem>().ItemTotal)
-        </th>
-        <th></th>
-
-    </tr>
-
-    @foreach (var item in Model.CartItems)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ItemTotal)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.CartId }, htmlAttributes: new { @class = "btn btn-info" })
-            </td>
-            <td>
-                @Html.ActionLink("Details", "Details", new { id = item.CartId }, htmlAttributes: new { @class = "btn btn-info" })
-            </td>
-            <td>
-                @Html.ActionLink("Delete", "Delete", new { id = item.CartId }, htmlAttributes: new { @class = "btn btn-info" })
-            </td>
-            <td>
-                @Html.ActionLink("Continue Shopping", "Index", "Home", null, htmlAttributes: new { @class = "btn btn-info" })
-            </td>
-        </tr>
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+            @TempData["SaveResult"]
+        </div>
     }
-    <tr>
-        <td></td>
-        <td></td>
-        <td><b>Cart Total:</b></td>
-        <td>
-            @Html.DisplayFor(model => model.CartTotal)
-        </td>
-    </tr>
-</table>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CartItems.First<Bookstore.Models.UserCartListItem>().Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CartItems.First<Bookstore.Models.UserCartListItem>().Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CartItems.First<Bookstore.Models.UserCartListItem>().Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CartItems.First<Bookstore.Models.UserCartListItem>().ItemTotal)
+            </th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+
+        </tr>
+
+        @foreach (var item in Model.CartItems)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemTotal)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CartId }, htmlAttributes: new { @class = "btn btn-info" })
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.CartId }, htmlAttributes: new { @class = "btn btn-info" })
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CartId }, htmlAttributes: new { @class = "btn btn-info" })
+                </td>
+                <td>
+                    @Html.ActionLink("Continue Shopping", "Index", "Home", null, htmlAttributes: new { @class = "btn btn-info" })
+                </td>
+
+            </tr>
+        }
+            <tr>
+                <td></td>
+                <td></td>
+                <td><b>Cart Total:</b></td>
+                <td></td>
+               
+                <td>
+                    <b>
+                        @Html.DisplayFor(model => model.CartTotal)
+                    </b>
+                </td>
+                <th></th>
+                <th></th>
+                <th></th>
+
+            </tr>
+    </table>
 
 
-<form action="~/Checkout/Confirmation" method="POST">
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="pk_test_xyxrTGDcuvs2YlTTIu9Ak5M1"
-            data-label="Proceed to Checkout"
-            data-amount=""
-            data-name="The Bibliotaph's Sanctum"
-            data-description="Credit Card Payment"
-            data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-            data-locale="auto"
-            data-zip-code="true"
-            data-billing-address
-            data-shipping-address>
+    <form action="~/Checkout/Confirmation" method="POST">
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="pk_test_xyxrTGDcuvs2YlTTIu9Ak5M1"
+                data-label="Proceed to Checkout"
+                data-amount=""
+                data-name="The Bibliotaph's Sanctum"
+                data-description="Credit Card Payment"
+                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                data-locale="auto"
+                data-zip-code="true"
+                data-billing-address
+                data-shipping-address>
 
 
-    </script>
-</form>
+        </script>
+    </form>
+</body>
+</html>

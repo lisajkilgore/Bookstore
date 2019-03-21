@@ -11,22 +11,22 @@
     <link href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Italianno|Special+Elite" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="~/Content/Site.css">
 </head>
-<body>
-    <div class="about-bg-img">
+<body class="about-bg-img">
+    <div>
 
         <h2>About Us</h2>
 
 
         <p>The Bibliotaph's Sanctum is a unique bookstore specifically designed for book lovers.
-        <p>We're here or those who love to collect, preserve, reread, and enjoy their books. </p>
+        <p>We're here for those who love to collect, preserve, reread, and enjoy their books. </p>
         <p>If you can't find a book on our site, contact us, and we will find it for you. </p>
         <p>We love books as much as you do, so your satisaction is important to us. </p>
         <p>Please contact us anytime. Happy book collecting!</p>
-    </div>
 
     <div>
         @Html.ActionLink("Back to Cart", "Index", "Cart", null, htmlAttributes: new { @class = "btn btn-info" })
         @Html.ActionLink("Continue Shopping", "Index", "Home", null, htmlAttributes: new { @class = "btn btn-info" })
+    </div>
     </div>
 
 </body>
