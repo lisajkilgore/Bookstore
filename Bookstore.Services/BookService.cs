@@ -52,8 +52,7 @@ namespace Bookstore.Services
             {
                 var query =
                     ctx
-                    .Book
-                    .Where(e => e.OwnerId == _userId)
+                    .Book                    
                     .Select(
                         e =>
 
@@ -68,7 +67,7 @@ namespace Bookstore.Services
                         IsBestSeller = e.IsBestSeller,
                         Price = e.Price,
                         Inventory = e.Inventory,
-                        Description = e.Description,
+                        Description = e.Description.Substring(0, 50),
                     }
 
 

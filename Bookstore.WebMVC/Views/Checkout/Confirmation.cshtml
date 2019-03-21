@@ -3,17 +3,29 @@
     ViewBag.Title = "Confirmation";
 }
 
-<div class="conf-bg-img">
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Italianno|Special+Elite" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/Content/Site.css">
+</head>
+<body>
 
-    <h2>Order Confirmation</h2>
+    <div>
+
+        <h2>Order Confirmation</h2>
 
 
-    <p>Thank you for purchasing books from The Bibliotaph's Sanctum.</p>
-    <p>Your books will arrive within 2 business days. We hope you purchase more books soon.</p>
-    <p>Happy reading!</p>
-</div>
+        <p>Thank you for purchasing books from The Bibliotaph's Sanctum.</p>
+        <p>Your books will arrive within 2 business days.</p>
+        <p>We hope you purchase more books soon.</p>
+        <p>Happy reading!</p>
+    </div>
 
-<div>
-    @Html.ActionLink("Back to Cart", "Index", "Cart", null, htmlAttributes: new { @class = "btn btn-info" })
-    @Html.ActionLink("Continue Shopping", "Index", "Home", null, htmlAttributes: new { @class = "btn btn-info" })
-</div>
+    <div>
+        @Html.ActionLink("Back to Cart", "Index", "Cart", null, htmlAttributes: new { @class = "btn btn-info" })
+        @Html.ActionLink("Continue Shopping", "Index", "Home", null, htmlAttributes: new { @class = "btn btn-info" })
+    </div>
+    </body>
+</html>
