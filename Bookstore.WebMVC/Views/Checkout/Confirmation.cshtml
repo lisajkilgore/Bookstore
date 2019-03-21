@@ -3,10 +3,17 @@
     ViewBag.Title = "Confirmation";
 }
 
-<h2>Order Confirmation</h2>
+<div class="conf-bg-img">
 
-<div>
+    <h2>Order Confirmation</h2>
+
+
     <p>Thank you for purchasing books from The Bibliotaph's Sanctum.</p>
     <p>Your books will arrive within 2 business days. We hope you purchase more books soon.</p>
     <p>Happy reading!</p>
+</div>
+
+<div>
+    @Html.ActionLink("Back to Cart", "Index", "Cart", null, htmlAttributes: new { @class = "btn btn-info" })
+    @Html.ActionLink("Continue Shopping", "Index", "Home", null, htmlAttributes: new { @class = "btn btn-info" })
 </div>

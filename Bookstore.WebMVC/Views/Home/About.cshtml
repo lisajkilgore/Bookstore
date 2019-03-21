@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿
+@{
+    ViewBag.Title = "About";
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -7,12 +12,22 @@
     <link rel="stylesheet" type="text/css" href="~/Content/Site.css">
 </head>
 <body>
+    <div class="about-bg-img">
 
-    <h2>About Us</h2>
+        <h2>About Us</h2>
 
 
-    <p>The Bibliotaph's Sanctum is a unique bookstore specifically designed for book lovers who love to collect, preserve, reread, and enjoy their books. If you can't find a book on our site, contact us, and we will find it for you. We love books as much as you do, so your satisaction is important to us. Please contact us anytime. Happy book collecting!</p>
-   
-    
+        <p>The Bibliotaph's Sanctum is a unique bookstore specifically designed for book lovers.
+        <p>We're here or those who love to collect, preserve, reread, and enjoy their books. </p>
+        <p>If you can't find a book on our site, contact us, and we will find it for you. </p>
+        <p>We love books as much as you do, so your satisaction is important to us. </p>
+        <p>Please contact us anytime. Happy book collecting!</p>
+    </div>
+
+    <div>
+        @Html.ActionLink("Back to Cart", "Index", "Cart", null, htmlAttributes: new { @class = "btn btn-info" })
+        @Html.ActionLink("Continue Shopping", "Index", "Home", null, htmlAttributes: new { @class = "btn btn-info" })
+    </div>
+
 </body>
 </html>

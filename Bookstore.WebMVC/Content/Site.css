@@ -1,11 +1,10 @@
 ﻿.navbar.navbar-inverse.navbar-fixed-top {
-    background-color: #708090;
+    background-color: #493267;
     font-size: 1.4em;
-    color: yellow;
 }
 
 .navbar-header {
-    background-color: #708090;
+    background-color: #493267;
 }
 
 
@@ -21,7 +20,7 @@ h1 {
 }
 
 h2 {
-    color: #662771;
+    color: #493267;
     font-family: 'Special Elite', cursive;
     font-size: 3em;
     text-align: center;
@@ -31,7 +30,7 @@ h2 {
 }
 
 h3 {
-    color: #662771;
+    color: #493267;
     font-family: 'Italianno', cursive;
     font-size: 4em;
     text-align: center;
@@ -40,7 +39,7 @@ h3 {
 }
 
 h4 {
-    color: #662771;
+    color: #493267;
     font-family: 'Special Elite', cursive;
     font-size: 1.5em;
     text-align: center;
@@ -48,7 +47,7 @@ h4 {
 }
 
 p {
-    color: black;
+    color: #493267;
     font-family: 'Raleway', sans-serif;
     font-size: 1.5em;
     text-align: left;
@@ -121,25 +120,15 @@ body {
     padding-bottom: 5px;
 }
 
-button{
+button {
     align-content: center;
 }
 
-
-
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
-}
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+address {
+    color: #493267;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
+    text-align: left;
 }
 
 footer {
@@ -149,9 +138,30 @@ footer {
     width: 100%;
 }
 
-contact-bg-img {
+.contact-bg-img {
     background-image: url("Assets/books-right-side.jpg");
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat no-repeat;
+    background-repeat: no-repeat;
+}
+
+.about-bg-img {
+    background-image: url("Assets/books-right-side.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.conf-bg-img {
+    background-image: url("Assets/books-right-side.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.btn-ljk {
+    Height: 500px;
+    Width: 500px;
+    color: white;
+    background-color: #493267;
 }
