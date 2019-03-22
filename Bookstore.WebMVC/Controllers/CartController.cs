@@ -142,6 +142,12 @@ namespace Bookstore.WebMVC.Controllers
             var service = new BookService(userId);
             return service;
         }
+        public ActionResult Description(int bookId)
+        {
+            var svc = CreateCartService();
+             var model = svc.GetBookDescription(bookId);
 
+            return View(model);
+        }
     }
 }

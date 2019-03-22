@@ -1,4 +1,4 @@
-﻿
+﻿@model Bookstore.Models.BookDescription
 @{
     ViewBag.Title = "Description";
 }
@@ -10,7 +10,7 @@
     <hr />
     <dl class="dl-horizontal">
 
-        @*<dt>
+        <dt>
             @Html.DisplayNameFor(model => model.Title)
         </dt>
 
@@ -31,7 +31,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Description)*@
+            @Html.DisplayFor(model => model.Description)
         </dd>
 
 

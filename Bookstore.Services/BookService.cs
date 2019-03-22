@@ -88,7 +88,7 @@ namespace Bookstore.Services
                 var entity =
                 ctx
                 .Book
-                .Single(e => e.BookId == bookId /*&& e.OwnerId == _userId*/);
+                .Single(e => e.BookId == bookId);
                 
                     return new BookDetail
                     {
@@ -116,7 +116,7 @@ namespace Bookstore.Services
                 var entity =
                     ctx
                     .Book
-                    .Single(e => e.BookId == model.BookId && e.OwnerId == _userId);
+                    .Single(e => e.BookId == model.BookId);
                 entity.BookId = model.BookId;
                 entity.TypeOfBook = model.TypeOfBook;
                 entity.Title = model.Title;

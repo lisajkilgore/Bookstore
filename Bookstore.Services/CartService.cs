@@ -112,12 +112,12 @@ namespace Bookstore.Services
                     .Cart
                     .Single(e => e.CartId == model.CartId && e.OwnerId == _userId);
 
-                entity.CartId = model.CartId;
-                entity.OwnerId = model.OwnerId;
-                entity.BookId = model.BookId;
-                entity.Book.Title = model.Title;
+               // entity.CartId = model.CartId;
+                //entity.OwnerId = model.OwnerId;
+                //entity.BookId = model.BookId;
+                //entity.Book.Title = model.Title;
                 entity.Quantity = model.Quantity;
-                entity.Price = model.Price;
+                //entity.Price = model.Price;
 
                 entity.ItemTotal = model.Price * Convert.ToDecimal(model.Quantity);
                 return ctx.SaveChanges() == 1;
