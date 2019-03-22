@@ -16,7 +16,7 @@ h1 {
     font-family: 'Special Elite', cursive;
     font-size: 7em;
     text-align: center;
-    text-shadow: 6px 6px 6px black;
+    text-shadow: 8px 6px 8px black;
 }
 
 h2 {
@@ -55,61 +55,6 @@ p {
 
 
 
-/* The side navigation menu */
-.sidebar {
-    margin: 0px 0px 0px -350px;
-    padding: 0px 0px 0px -0px;
-    float: left;
-    background-color: #c7bbc9;
-}
-
-    /* Sidebar links */
-    .sidebar a {
-        display: block;
-        color: black;
-        padding: 16px;
-        text-decoration: none;
-    }
-
-        /* Active/current link */
-        .sidebar a.active {
-            background-color: #5e3c58;
-            color: white;
-        }
-
-        /* Links on mouse-over */
-        .sidebar a:hover:not(.active) {
-            background-color: #555;
-            color: white;
-        }
-
-
-
-/* On screens that are less than 700px wide, make the sidebar into a topbar */
-@media screen and (max-width: 700px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-
-        .sidebar a {
-            float: left;
-        }
-
-    div.content {
-        margin-left: 0;
-    }
-}
-
-/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-@media screen and (max-width: 400px) {
-    .sidebar a {
-        text-align: center;
-        float: none;
-    }
-}
-
 body {
     padding-top: 8em;
     background-color: #dce7ea;
@@ -138,6 +83,7 @@ table {
     background-image: url("Assets/books-right-side.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position-x: center;
    }
 
 

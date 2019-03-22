@@ -21,30 +21,44 @@
                     <span class="icon-bar"></span>
                 </button>
             </div>
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    @if (User.IsInRole("Admin"))
-                    {
-                        <li>@Html.ActionLink("Books", "Index", "Book")</li>
-                    }
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categories
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'about' %}#bestsellers">Best Sellers</a>
+                        <a class="dropdown-item" href="{% url 'about' %}#newreleases">New Releases</a>
+                        <a class="dropdown-item" href="{% url 'about' %}#youungadult">Teen & Young Adult</a>
+                        <a class="dropdown-item" href="{% url 'about' %}#children">Children's</a>
+                        <a class="dropdown-item" href="{% url 'about' %}#rare">Rare Collectibles</a>
+                        <div class="dropdown-divider"></div>
+                        <span class="sr-only">(current)</span></a>
+                </li>
+                @if (User.IsInRole("Admin"))
+                {
+                    <li>@Html.ActionLink("Books", "Index", "Book")</li>
+                }
 
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li>@Html.ActionLink("Shopping Cart", "Index", "Cart")</li>
-                    }
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li>@Html.ActionLink("Shopping Cart", "Index", "Cart")</li>
+
+                }
+            </ul>
+            @Html.Partial("_LoginPartial")
         </div>
-   
+    </div>
+
 
     <div class="container">
         @RenderBody()
-        
+
     </div>
-    
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
