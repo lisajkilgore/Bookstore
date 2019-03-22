@@ -119,7 +119,7 @@ namespace Bookstore.WebMVC.Controllers
         {
             var service = CreateCartService();
 
-            service.DeleteCart(id);
+            service.DeleteFromCart(id);
 
             TempData["SaveResult"] = "The book was removed from your cart.";
 

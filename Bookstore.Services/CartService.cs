@@ -118,15 +118,15 @@ namespace Bookstore.Services
                 entity.Book.Title = model.Title;
                 entity.Quantity = model.Quantity;
                 entity.Price = model.Price;
-                               
+
                 entity.ItemTotal = model.Price * Convert.ToDecimal(model.Quantity);
                 return ctx.SaveChanges() == 1;
             }
         }
-        
-        
 
-        public bool DeleteCart(int cartId)
+
+
+        public bool DeleteFromCart(int cartId)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -155,7 +155,31 @@ namespace Bookstore.Services
 
             return CreateCart(cartCreate);
         }
+
+        public BookDescription GetBookDescription(int bookId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Cart
+                    .Single(e => e.BookId == bookId && e.OwnerId == _userId);
+                return
+                    new BookDescription
+                    {
+                        BookId = entity.BookId,
+                        TypeOfBook = entity.Book.TypeOfBook,
+                        Title = entity.Book.Title,
+                        Author = entity.Book.Author,
+                        IsFiction = entity.Book.IsFiction,
+                        IsBestSeller = entity.Book.IsBestSeller,
+                        IsNewRelease = entity.Book.IsNewRelease,
+                        Price = entity.Book.Price,
+                        Description = entity.Book.Description,
+
+                    };
+            }
+        }
     }
 }
-
 

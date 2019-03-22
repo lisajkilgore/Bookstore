@@ -23,21 +23,18 @@
             </div>
             <ul class="nav navbar-nav">
                 <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Categories <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>@Html.ActionLink("Best Sellers", "Index", "Home", null, new { href = "#bestsellers" })</li>
+                        <li>@Html.ActionLink("New Releases", "Index", "Home", null, new { href = "#newreleases" })</li>
+                        <li>@Html.ActionLink("Teen & Young Adult", "Index", "Home", null, new { href = "#youngadult" })</li>
+                        <li>@Html.ActionLink("Children's", "Index", "Home", null, new { href = "#children" })</li>
+                        <li>@Html.ActionLink("Rare Collectibles", "Index", "Home", null, new { href = "#rare" })</li>
+                    </ul>
+                </li>
                 <li>@Html.ActionLink("About", "About", "Home")</li>
                 <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Categories
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{% url 'about' %}#bestsellers">Best Sellers</a>
-                        <a class="dropdown-item" href="{% url 'about' %}#newreleases">New Releases</a>
-                        <a class="dropdown-item" href="{% url 'about' %}#youungadult">Teen & Young Adult</a>
-                        <a class="dropdown-item" href="{% url 'about' %}#children">Children's</a>
-                        <a class="dropdown-item" href="{% url 'about' %}#rare">Rare Collectibles</a>
-                        <div class="dropdown-divider"></div>
-                        <span class="sr-only">(current)</span></a>
-                </li>
                 @if (User.IsInRole("Admin"))
                 {
                     <li>@Html.ActionLink("Books", "Index", "Book")</li>
