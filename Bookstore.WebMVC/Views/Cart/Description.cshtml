@@ -8,7 +8,9 @@
 <div>
 
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="table" id="table">
+
+        @Html.HiddenFor(model => model.BookId)
         <dt>
             @Html.DisplayNameFor(model => model.TypeOfBook)
         </dt>
@@ -74,6 +76,7 @@
     </dl>
 </div>
 <p>
+    @Html.ActionLink("Add to Cart", "AddToCart", "Cart", new {id = Model.BookId}, htmlAttributes: new { @class = "btn btn-info" })
     @Html.ActionLink("Back to Cart", "Index", "Cart", htmlAttributes: new { @class = "btn btn-info" })
     @Html.ActionLink("Continue Shopping", "Index", "Home", null, htmlAttributes: new { @class = "btn btn-info" })
 </p>
