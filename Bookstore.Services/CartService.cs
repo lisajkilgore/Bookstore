@@ -112,13 +112,7 @@ namespace Bookstore.Services
                     .Cart
                     .Single(e => e.CartId == model.CartId && e.OwnerId == _userId);
 
-               // entity.CartId = model.CartId;
-                //entity.OwnerId = model.OwnerId;
-                //entity.BookId = model.BookId;
-                //entity.Book.Title = model.Title;
                 entity.Quantity = model.Quantity;
-                //entity.Price = model.Price;
-
                 entity.ItemTotal = model.Price * Convert.ToDecimal(model.Quantity);
                 return ctx.SaveChanges() == 1;
             }
@@ -162,20 +156,20 @@ namespace Bookstore.Services
             {
                 var entity =
                     ctx
-                    .Cart
-                    .Single(e => e.BookId == bookId && e.OwnerId == _userId);
-                return
-                    new BookDescription
+                    .Book
+                    .Single(e => e.BookId == bookId);
+                return new BookDescription
                     {
                         BookId = entity.BookId,
-                        TypeOfBook = entity.Book.TypeOfBook,
-                        Title = entity.Book.Title,
-                        Author = entity.Book.Author,
-                        IsFiction = entity.Book.IsFiction,
-                        IsBestSeller = entity.Book.IsBestSeller,
-                        IsNewRelease = entity.Book.IsNewRelease,
-                        Price = entity.Book.Price,
-                        Description = entity.Book.Description,
+                        TypeOfBook = entity.TypeOfBook,
+                        Title = entity.Title,
+                        Author = entity.Author,
+                        IsFiction = entity.IsFiction,
+                        IsBestSeller = entity.IsBestSeller,
+                        IsNewRelease = entity.IsNewRelease,
+                        Price = entity.Price,
+                        BookTypeAsString = Helper.GetDisplayName(entity.TypeOfBook),
+                        Description = entity.Description,
 
                     };
             }

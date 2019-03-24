@@ -15,6 +15,8 @@ namespace Bookstore.Models
         [DisplayName("Category")]
         public BookType TypeOfBook { get; set; }
 
+        public string BookTypeAsString { get; set; }
+
         public string Title { get; set; }
 
         public string Author { get; set; }

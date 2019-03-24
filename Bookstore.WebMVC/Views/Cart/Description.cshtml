@@ -9,6 +9,13 @@
 
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeOfBook)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookTypeAsString)
+        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.Title)
@@ -27,6 +34,36 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.IsFiction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsFiction)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsBestSeller)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsBestSeller)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsNewRelease)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsNewRelease)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Description)
         </dt>
 
@@ -34,11 +71,9 @@
             @Html.DisplayFor(model => model.Description)
         </dd>
 
-
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Back to List", "Index", "Cart", htmlAttributes: new { @class = "btn btn-info" })
+    @Html.ActionLink("Back to Cart", "Index", "Cart", htmlAttributes: new { @class = "btn btn-info" })
     @Html.ActionLink("Continue Shopping", "Index", "Home", null, htmlAttributes: new { @class = "btn btn-info" })
 </p>
