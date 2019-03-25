@@ -1,4 +1,7 @@
-﻿using Bookstore.Models;
+﻿using Bookstore.Data;
+using Bookstore.Models;
+using Bookstore.Services;
+using Microsoft.AspNet.Identity;
 using Stripe;
 using System;
 using System.Collections.Generic;
@@ -61,14 +64,35 @@ namespace Bookstore.WebMVC.Controllers
 
             return RedirectToAction("Confirmation");
         }
-        
 
-        // GET: Confirmation
-        public ActionResult Confirmation()
-        {
-            //TODO: Add UpdateInventory() and ClearCart() here
-            return View();
-        }
 
+
+        //public ActionResult UpdateInventory(int cartId, int bookId, int quantity)
+        //{
+
+        //    List<UserCartListItem> userCart = GetUserBooks();
+        //    foreach (var book in userCart)
+        //    {
+        //        for (int i = 0; i < quantity; i++)
+        //        {
+        //            if (bookId ==
+        //        }
+        //    }
+
+        //    return View();
+        //}
+
+        //public ActionResult ClearCart()
+        //{
+        //    var service = CreateCartService();
+        //    var model = service.GetCartById(id);
+        //    var cartItems = service.GetUserBooks();
+        //    foreach(var book in cartItems)
+        //    {
+        //        cartItems.Remove(cartItems);
+        //    }
+
+        //    cartItems.SaveChanges();
     }
 }
+
