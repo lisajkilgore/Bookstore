@@ -76,7 +76,7 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Add to Cart", "AddToCart", "Cart", new {id = Model.BookId}, htmlAttributes: new { @class = "btn btn-info" })
+    @Html.ActionLink("Add to Cart", "AddToCart", "Cart", new {bookId = Model.BookId}, htmlAttributes: new { @class = "btn btn-info" })
     @Html.ActionLink("Back to Cart", "Index", "Cart", htmlAttributes: new { @class = "btn btn-info" })
-    @Html.ActionLink("Continue Shopping", "Index", "Home", null, htmlAttributes: new { @class = "btn btn-info" })
+    @Html.ActionLink("Continue Shopping", "Index", "Home", null, htmlAttributes: new { @class = "btn btn-success" })
 </p>
