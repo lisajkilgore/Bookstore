@@ -65,6 +65,10 @@ namespace Bookstore.WebMVC.Controllers
             return RedirectToAction("Confirmation");
         }
 
+        public ActionResult Confirmation()
+        {
+            return View();
+        }
 
 
         //public ActionResult UpdateInventory(int cartId, int bookId, int quantity)
