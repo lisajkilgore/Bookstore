@@ -20,23 +20,43 @@ namespace Bookstore.WebApi.Controllers
             return Ok(books);
         }
 
-        public IHttpActionResult Get(int id)
+        public IHttpActionResult Get(int bookId)
         {
-            return Ok();
+            BookService bookService = CreateBookService();
+            var book = bookService.GetBookById(bookId);
+            return Ok(book);
         }
 
         public IHttpActionResult Post(BookCreate book)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateBookService();
+
+            if (!service.CreateBook(book))
+                return InternalServerError();
             return Ok();
         }
 
         public IHttpActionResult Put(BookEdit book)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateBookService();
+
+            if (!service.UpdateBook(book))
+                return InternalServerError();
             return Ok();
         }
 
-        public IHttpActionResult Delete(int id)
+        public IHttpActionResult Delete(int bookId)
         {
+            var service = CreateBookService();
+
+            if (!service.DeleteBook(bookId))
+                return InternalServerError();
             return Ok();
         }
         private BookService CreateBookService()
