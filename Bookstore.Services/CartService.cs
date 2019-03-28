@@ -159,21 +159,66 @@ namespace Bookstore.Services
                     .Book
                     .Single(e => e.BookId == bookId);
                 return new BookDescription
-                    {
-                        BookId = entity.BookId,
-                        TypeOfBook = entity.TypeOfBook,
-                        Title = entity.Title,
-                        Author = entity.Author,
-                        IsFiction = entity.IsFiction,
-                        IsBestSeller = entity.IsBestSeller,
-                        IsNewRelease = entity.IsNewRelease,
-                        Price = entity.Price,
-                        BookTypeAsString = Helper.GetDisplayName(entity.TypeOfBook),
-                        Description = entity.Description,
+                {
+                    BookId = entity.BookId,
+                    TypeOfBook = entity.TypeOfBook,
+                    Title = entity.Title,
+                    Author = entity.Author,
+                    IsFiction = entity.IsFiction,
+                    IsBestSeller = entity.IsBestSeller,
+                    IsNewRelease = entity.IsNewRelease,
+                    Price = entity.Price,
+                    BookTypeAsString = Helper.GetDisplayName(entity.TypeOfBook),
+                    Description = entity.Description,
 
-                    };
+                };
             }
         }
+        //protected void Page_PreRender(object sender, EventArgs e)
+        //{
+        //    using (ApplicationDbContext usersShoppingCart = new ApplicationDbContext())
+        //    {
+        //        string cartStr = string.Format("Cart ({0})", usersShoppingCart.GetCount());
+        //        cartCount.InnerText = cartStr;
     }
 }
+        //public ActionResult UpdateInventory(int cartId, int bookId, int quantity)
+        //{
+
+        //    List<UserCartListItem> userCart = GetUserBooks();
+        //    foreach (var book in userCart)
+        //    {
+        //        for (int i = 0; i < quantity; i++)
+        //        {
+        //            if (bookId ==
+        //        }
+        //    }
+
+        //    return View();
+        //}
+
+        //public bool ClearCart()
+        //{
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+        //        var query =
+        //            ctx
+        //            .Cart
+        //            .Where(e => e.OwnerId == _userId)
+        //            .ToList();
+
+        //        var x = query.Count;
+        //        var i = x;
+        //        while(i!=0)
+        //        {
+        //            foreach(var q in query)
+        //            {
+        //                (ctx.Cart.Remove(q i));
+        //                i--;
+        //            }
+        //            return ctx.SaveChanges() == x;
+  
+        
+    
+
 

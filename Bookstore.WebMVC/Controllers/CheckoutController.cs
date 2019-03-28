@@ -70,33 +70,6 @@ namespace Bookstore.WebMVC.Controllers
             return View();
         }
 
-
-        //public ActionResult UpdateInventory(int cartId, int bookId, int quantity)
-        //{
-
-        //    List<UserCartListItem> userCart = GetUserBooks();
-        //    foreach (var book in userCart)
-        //    {
-        //        for (int i = 0; i < quantity; i++)
-        //        {
-        //            if (bookId ==
-        //        }
-        //    }
-
-        //    return View();
-        //}
-
-        //public ActionResult ClearCart()
-        //{
-        //    var service = CreateCartService();
-        //    var model = service.GetCartById(id);
-        //    var cartItems = service.GetUserBooks();
-        //    foreach(var book in cartItems)
-        //    {
-        //        cartItems.Remove(cartItems);
-        //    }
-
-        //    cartItems.SaveChanges();
     }
 }
 
